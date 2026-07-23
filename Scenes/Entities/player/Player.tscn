@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jg2bgf1rfc30" path="res://assets/sprites/player/WALK1.png" id="5_3m754"]
 [ext_resource type="Texture2D" uid="uid://3vg4ualiuw08" path="res://assets/sprites/player/WALK2.png" id="6_46t5s"]
 [ext_resource type="Texture2D" uid="uid://looab7bv07xo" path="res://assets/sprites/player/WALK3.png" id="7_0pa8p"]
+[ext_resource type="PackedScene" uid="uid://c8fawvit0jiey" path="res://Scenes/Entities/TimerCircle/TimerCircleSimple.tscn" id="8_sqdub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxs14"]
 radius = 32.01562
@@ -56,10 +57,14 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=669370031]
+[node name="Player" type="CharacterBody2D" unique_id=669370031]
 script = ExtResource("1_v402d")
 
+[node name="TimerCircleSimple" parent="." unique_id=302309931 instance=ExtResource("8_sqdub")]
+scale = Vector2(2.11, 2.11)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=824887952]
+visible = false
 shape = SubResource("CircleShape2D_fxs14")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=470850823]
