@@ -118,6 +118,7 @@ script = ExtResource("1_v402d")
 
 [node name="TimerCircleSimple" parent="." unique_id=302309931 instance=ExtResource("8_sqdub")]
 position = Vector2(10.309, 2.319)
+rotation = 3.1415927
 scale = Vector2(2.84, 1.59)
 color = Color(4.813075e-06, 0.6714021, 0.9064491, 1)
 
