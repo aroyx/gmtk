@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d2k3mrrokrh54"]
+
+[ext_resource type="Script" uid="uid://707e0wi6sm6h" path="res://Scenes/Entities/Enemy/enemy.gd" id="1_j1w5s"]
+[ext_resource type="Texture2D" uid="uid://debadmwm7ryb" path="res://assets/sprites/player/IDLE1.png" id="2_e58rf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1w5s"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1575358229]
+script = ExtResource("1_j1w5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1710454240]
+scale = Vector2(0.99260724, 0.9837595)
+shape = SubResource("CircleShape2D_j1w5s")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1049903689]
+target_position = Vector2(40, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1713093152]
+scale = Vector2(0.84698516, 1)
+target_position = Vector2(-40, 0)
+
+[node name="RayCastUp" type="RayCast2D" parent="." unique_id=77714979]
+scale = Vector2(1.0580307, 1)
+target_position = Vector2(0, -40)
+
+[node name="RayCastDown" type="RayCast2D" parent="." unique_id=241637759]
+scale = Vector2(1.0059578, 1)
+target_position = Vector2(0, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626398878]
+scale = Vector2(0.0925355, 0.08930796)
+texture = ExtResource("2_e58rf")
+
+[node name="Timer" type="Timer" parent="." unique_id=99083139]
+autostart = true
