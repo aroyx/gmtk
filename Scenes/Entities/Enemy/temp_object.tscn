@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dlngmg7k4wp0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcltu"]
+size = Vector2(21, 20)
+
+[node name="TempObject" type="Node2D" unique_id=741587840 groups=["tempObject"]]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2037575468]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=707280301 groups=["tempObject"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=157431427]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_xcltu")

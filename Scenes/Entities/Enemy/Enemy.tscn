@@ -14,18 +14,22 @@ shape = SubResource("CircleShape2D_j1w5s")
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=1049903689]
 target_position = Vector2(40, 0)
+collide_with_areas = true
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1713093152]
 scale = Vector2(0.84698516, 1)
 target_position = Vector2(-40, 0)
+collide_with_areas = true
 
 [node name="RayCastUp" type="RayCast2D" parent="." unique_id=77714979]
 scale = Vector2(1.0580307, 1)
 target_position = Vector2(0, -40)
+collide_with_areas = true
 
 [node name="RayCastDown" type="RayCast2D" parent="." unique_id=241637759]
 scale = Vector2(1.0059578, 1)
 target_position = Vector2(0, 40)
+collide_with_areas = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626398878]
 scale = Vector2(0.0925355, 0.08930796)
@@ -33,3 +37,5 @@ texture = ExtResource("2_e58rf")
 
 [node name="Timer" type="Timer" parent="." unique_id=99083139]
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

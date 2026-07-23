@@ -17,18 +17,53 @@ func _ready() -> void:
 	var rad = $CollisionShape2D.shape.radius
 	player_size = Vector2(rad, rad)
 
-func set_random_timer():
-	var rand_time = [5,6,10,7,9].pick_random()
-	timer.wait_time = rand_time;
-	
+#func set_random_timer():
+	#var rand_time = [5,6,10,7,9].pick_random()
+	#timer.wait_time = rand_time;
+	#timer.start();
+#
 
-func _process(delta: float) -> void:
+
+func _physics_process(delta: float) -> void:
 	
-	var rand = [1,2,3,4].pick_random();
+	#var rand = [1,2,3,4].pick_random();
 	
-	print(rand)
+	if ray_cast_up.is_colliding():
+		var collider = ray_cast_up.get_collider()
+		
+		print("colliding_obj with RayCastUP:  ",collider)
+		
+		if collider and collider.is_in_group("tempObject"):
+			print("collider in the group tempObject :: ", collider)
+	
+	if ray_cast_down.is_colliding():
+		var collider = ray_cast_down.get_collider()
+		
+		print("colliding_obj with RayCastDown:  ",collider)
+		
+		if collider and collider.is_in_group("tempObject"):
+			print("collider in the group tempObject :: ", collider)
+	
+	if ray_cast_left.is_colliding():
+		var collider = ray_cast_left.get_collider()
+		
+		print("colliding_obj with RayCastLeft:  ",collider)
+		
+		if collider and collider.is_in_group("tempObject"):
+			print("collider in the group tempObject :: ", collider)
+	
+		
+	if ray_cast_right.is_colliding():
+		var collider = ray_cast_right.get_collider()
+		
+		print("colliding_obj with RayCastRight:  ",collider)
+		
+		if collider and collider.is_in_group("tempObject"):
+			print("collider in the group tempObject :: ", collider)
+	
 	
 	var input_dir = Vector2.ZERO
+	
 	if Input.is_action_pressed("move_down"):
 		input_dir.y += 1
 	
@@ -44,14 +79,9 @@ func _process(delta: float) -> void:
 	var speed_multiplier = 1
 	if Input.is_action_pressed("player_run"):
 		speed_multiplier = 1.5
-		# This is for prototyping, remove later together with the else block
-		##$AnimatedSprite2D.modulate = Color.GREEN
-	#else:
-		##$AnimatedSprite2D.modulate = Color.WHITE
-
 	
-	position += input_dir.normalized() * speed * delta * speed_multiplier
-	
+	velocity += input_dir.normalized() * speed * delta * speed_multiplier
+	move_and_slide()
 	# Remove this when our plan is to expand the map beyond the screen size
 	position = position.clamp(Vector2.ZERO + player_size, screen_size - player_size)
 	
@@ -66,3 +96,10 @@ func _process(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		var rot = input_dir.angle()
 		rotation = lerp_angle(rotation, rot, 10 * delta)
+
+
+
+
+#
+#func _on_timer_timeout() -> void:
+	#set_random_timer()
