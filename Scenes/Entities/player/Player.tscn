@@ -132,3 +132,6 @@ scale = Vector2(3.9402678, 3.9402678)
 sprite_frames = SubResource("SpriteFrames_rkr2n")
 animation = &"walk_left"
 metadata/_edit_group_ = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=499005495]
+position = Vector2(-84, -223)

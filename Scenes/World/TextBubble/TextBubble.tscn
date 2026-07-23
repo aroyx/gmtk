@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://hvvvf5twf3n4"]
+
+[ext_resource type="Texture2D" uid="uid://cc66jnt120ow6" path="res://assets/sprites/environment/text_box.png" id="1_rlgfv"]
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="2_imcko"]
+[ext_resource type="Script" uid="uid://bp6cehta8oky7" path="res://Scenes/World/TextBubble/text_bubble.gd" id="2_ku3qq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_imcko"]
+texture = ExtResource("1_rlgfv")
+texture_margin_left = 48.0
+texture_margin_top = 48.0
+texture_margin_right = 48.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Label" type="PanelContainer" unique_id=562493762]
+offset_right = 97.0
+offset_bottom = 136.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_imcko")
+script = ExtResource("2_ku3qq")
+
+[node name="Label" type="Label" parent="." unique_id=1398397385]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_imcko")
+theme_override_font_sizes/font_size = 40
+
+[node name="LetterDisplayTimer" type="Timer" parent="." unique_id=23757250]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

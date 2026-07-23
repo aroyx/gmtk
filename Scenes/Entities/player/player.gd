@@ -15,6 +15,14 @@ func _ready() -> void:
 
 var facing_dir = "fwd"
 
+var lines: Array[String] = [
+	"Hey! Are you a nice person?",
+	"Because I am a really nice person!",
+	"Actually, ik we just met eachother....",
+	"but the thing is.....",
+	"I LOVE YOU!! <insert_heart_emoji>"
+]
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("start_timer"):
 		$TimerCircleSimple.start_countdown(9)
@@ -24,6 +32,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			hide_player()
 		elif is_hidden:
 			unhide_player()
+	if event.is_action_pressed("interact"):
+		DialogueManager.start_dialog($Marker2D.global_position, lines)
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector2.ZERO
