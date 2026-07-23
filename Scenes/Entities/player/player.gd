@@ -32,8 +32,8 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.modulate = Color.WHITE
 
 	
-	position += input_dir.normalized() * speed * delta * speed_multiplier
-	
+	velocity = input_dir.normalized() * speed * speed_multiplier
+	move_and_slide()
 	# Remove this when our plan is to expand the map beyond the screen size
 	position = position.clamp(Vector2.ZERO + player_size, screen_size - player_size)
 	
@@ -50,4 +50,4 @@ func _process(delta: float) -> void:
 		rotation = lerp_angle(rotation, rot, 10 * delta)
 
 	if Input.is_action_just_pressed("start_timer"):
-		$TimerCircle.start_countdown(randf_range(0, 7))
+		$TimerCircleSimple.start_countdown(9)

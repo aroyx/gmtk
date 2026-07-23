@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d28vsnookm3dr"]
+
+[ext_resource type="Texture2D" uid="uid://bgrolisthhl13" path="res://assets/sprites/environment/treeGreen_small.png" id="1_ta1ik"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkr2n"]
+radius = 26.0
+
+[node name="Bush" type="RigidBody2D" unique_id=743109716]
+freeze = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=592798527]
+position = Vector2(-2.861023e-06, -2.861023e-06)
+scale = Vector2(1.3888888, 1.3888888)
+texture = ExtResource("1_ta1ik")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=44482413]
+shape = SubResource("CircleShape2D_rkr2n")

@@ -12,6 +12,7 @@ shader_parameter/pos = Vector2(0, 0)
 
 [node name="TimerCircle" type="Node2D" unique_id=1489893318]
 script = ExtResource("1_e0hcw")
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=533851608]
 material = SubResource("ShaderMaterial_e0hcw")
