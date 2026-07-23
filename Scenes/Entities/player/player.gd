@@ -48,3 +48,6 @@ func _process(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		var rot = input_dir.angle()
 		rotation = lerp_angle(rotation, rot, 10 * delta)
+
+	if Input.is_action_just_pressed("start_timer"):
+		$TimerCircle.start_countdown(randf_range(0, 7))
