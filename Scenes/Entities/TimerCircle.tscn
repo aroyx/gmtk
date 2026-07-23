@@ -2,20 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bh1cv44230ipk" path="res://Scenes/Entities/timer_circle.gd" id="1_e0hcw"]
 [ext_resource type="Shader" uid="uid://blefp8hw8puvl" path="res://Scenes/Entities/TimerCircle.gdshader" id="2_bhwdk"]
-[ext_resource type="Texture2D" uid="uid://0mwh0snvedux" path="res://Scenes/Entities/Untitled Document(2).png" id="2_iaq7g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0hcw"]
 shader = ExtResource("2_bhwdk")
 shader_parameter/color = Color(0.46382946, 0.33795854, 0.6147446, 1)
-shader_parameter/val = 0.499999988824
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/val = 0.6999999843536
 
 [node name="TimerCircle" type="Node2D" unique_id=1489893318]
 script = ExtResource("1_e0hcw")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=133817047]
-visible = false
-scale = Vector2(0.046204545, 0.046204552)
-texture = ExtResource("2_iaq7g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=533851608]
 material = SubResource("ShaderMaterial_e0hcw")

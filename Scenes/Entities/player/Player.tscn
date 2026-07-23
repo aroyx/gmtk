@@ -67,7 +67,8 @@ shape = SubResource("CircleShape2D_fxs14")
 [node name="TimerCircle" parent="." unique_id=1489893318 instance=ExtResource("8_sqdub")]
 rotation = 1.5707964
 scale = Vector2(3.225, 3.225)
-color = Color(0.23532245, 0.43318063, 0.78729296, 1)
+color = Color(0.8694857, 0.89712733, 0.98766357, 1)
+bg_color = Color(0.17006159, 0.43604034, 0.9264773, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=470850823]
 scale = Vector2(0.33249998, 0.33249998)
