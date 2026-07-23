@@ -23,6 +23,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+hiding_places="These are the entities where the player can hide"
+
 [input]
 
 move_right={

@@ -6,7 +6,13 @@ uniform float val: hint_range(0.0, 1.0, 0.01) = 0.5;
 
 uniform float radius: hint_range(0.0, 0.5, 0.01) = 0.45;
 uniform float inner_radius: hint_range(0.0, 0.5, 0.01) = 0.35;
+
 void fragment() {
+	if (val == 0.0) {
+		COLOR = vec4(0);
+		discard;
+	}
+
     vec2 uv = UV - vec2(0.5);
 
     float angle = atan(uv.x, -uv.y);

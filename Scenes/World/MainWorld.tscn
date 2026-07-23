@@ -7,6 +7,7 @@
 
 [node name="Player" parent="." unique_id=669370031 instance=ExtResource("1_l8lh6")]
 position = Vector2(646, 409)
+scale = Vector2(0.53, 0.53)
 
 [node name="StaticBody2D" parent="." unique_id=1783804254 instance=ExtResource("2_fnj6m")]
 position = Vector2(646, 210)

@@ -1,4 +1,8 @@
 extends CharacterBody2D
+class_name Player
+
+var nearby_bush = null
+var is_hidden = false
 
 @export var speed = 250.0
 var screen_size: Vector2
@@ -9,6 +13,7 @@ func _ready() -> void:
 	var rad = $CollisionShape2D.shape.radius
 	player_size = Vector2(rad, rad)
 
+var facing_dir = "fwd"
 func _process(delta: float) -> void:
 	var input_dir = Vector2.ZERO
 	if Input.is_action_pressed("move_down"):
@@ -23,31 +28,25 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
 		input_dir.x -= 1
 	
-	var speed_multiplier = 1
-	if Input.is_action_pressed("player_run"):
-		speed_multiplier = 1.5
-		# This is for prototyping, remove later together with the else block
-		$AnimatedSprite2D.modulate = Color.GREEN
-	else:
-		$AnimatedSprite2D.modulate = Color.WHITE
-
-	
-	velocity = input_dir.normalized() * speed * speed_multiplier
+	velocity = input_dir.normalized() * speed
 	move_and_slide()
 	# Remove this when our plan is to expand the map beyond the screen size
 	position = position.clamp(Vector2.ZERO + player_size, screen_size - player_size)
 	
 	# Animations
-	if input_dir.x == 0 && input_dir.y == 0:
-		$AnimatedSprite2D.play("idle")
-	elif Input.is_action_pressed("player_run"):
-		$AnimatedSprite2D.play("run")
+	if input_dir.x > 0:
+		facing_dir = "right"
+	elif input_dir.x < 0:
+		facing_dir = "left"
+	elif input_dir.y > 0:
+		facing_dir = "fwd"
+	elif input_dir.y < 0:
+		facing_dir = "back"
+	
+	if input_dir == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle_" + facing_dir)
 	else:
-		$AnimatedSprite2D.play("walk")
-
-	if input_dir != Vector2.ZERO:
-		var rot = input_dir.angle()
-		rotation = lerp_angle(rotation, rot, 10 * delta)
-
+		$AnimatedSprite2D.play("walk_" + facing_dir)
+		
 	if Input.is_action_just_pressed("start_timer"):
 		$TimerCircleSimple.start_countdown(9)

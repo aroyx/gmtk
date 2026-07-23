@@ -5,8 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fxs14"]
 shader = ExtResource("2_xp6gb")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/bg_color = Color(0, 0, 0, 1)
+shader_parameter/color = Color(0.09019608, 1, 1, 1)
+shader_parameter/bg_color = Color(1, 1, 1, 1)
 shader_parameter/val = 0.63999998569472
 shader_parameter/radius = 0.499999988824
 shader_parameter/inner_radius = 0.0
