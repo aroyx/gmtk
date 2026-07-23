@@ -6,10 +6,11 @@ uniform vec4 color : source_color;
 uniform vec4 bg_color : source_color;
 
 uniform float val: hint_range(0.0, 1.0, 0.01);
+uniform vec2 pos;
 
 void fragment() {
 	vec2 uv = UV - vec2(0.5);
-	vec2 gridc = fract(uv * 7.0 + vec2(1));
+	vec2 gridc = fract(uv * 7.0 + pos);
 	float dist = length(uv);
 	float a = distance(gridc, vec2(.5)); 
     float r = 0.6;

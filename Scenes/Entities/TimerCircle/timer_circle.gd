@@ -17,11 +17,12 @@ func _ready() -> void:
 
 	$ColorRect.material.set_shader_parameter("val", 0.0)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	global_rotation = init_roation
-	
+	$ColorRect.material.set_shader_parameter("pos", Vector2(global_position.x / 400.0, global_position.y / 400))
+
 	if $Timer.is_stopped():
-		$ColorRect.material.set_shader_parameter("val", 0.0)
+		$ColorRect.material.set_shader_parameter("val", 1.0)
 	else:
 		$ColorRect.material.set_shader_parameter("val", $Timer.time_left / $Timer.wait_time)
 
