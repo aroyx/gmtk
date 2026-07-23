@@ -2,32 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/player/Player.tscn" id="1_l8lh6"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fxs14"]
-normal = Vector2(1, 0)
+[node name="MainWorld" type="Node2D" unique_id=1605111765]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ibra"]
-distance = -649.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1bqu"]
-normal = Vector2(0, 1)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rkr2n"]
-normal = Vector2(-1, 0)
-distance = -1152.0
-
-[node name="MainWorld" type="Area2D" unique_id=402095539]
-
-[node name="CharacterBody2D" parent="." unique_id=669370031 instance=ExtResource("1_l8lh6")]
-position = Vector2(94, 134)
-
-[node name="Boundary" type="CollisionShape2D" parent="." unique_id=2079000223]
-shape = SubResource("WorldBoundaryShape2D_fxs14")
-
-[node name="Boundary2" type="CollisionShape2D" parent="." unique_id=2042118485]
-shape = SubResource("WorldBoundaryShape2D_0ibra")
-
-[node name="Boundary3" type="CollisionShape2D" parent="." unique_id=436774755]
-shape = SubResource("WorldBoundaryShape2D_a1bqu")
-
-[node name="Boundary4" type="CollisionShape2D" parent="." unique_id=1740146380]
-shape = SubResource("WorldBoundaryShape2D_rkr2n")
+[node name="Player" parent="." unique_id=669370031 instance=ExtResource("1_l8lh6")]
+position = Vector2(261, 243)

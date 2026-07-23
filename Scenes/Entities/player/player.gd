@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	
 	var speed_multiplier = 1
 	if Input.is_action_pressed("player_run"):
-		speed_multiplier = 2
+		speed_multiplier = 1.5
 		# This is for prototyping, remove later together with the else block
 		$AnimatedSprite2D.modulate = Color.GREEN
 	else:
@@ -46,4 +46,5 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.play("walk")
 
 	if input_dir != Vector2.ZERO:
-		$AnimatedSprite2D.rotation = input_dir.angle()
+		var rot = input_dir.angle()
+		rotation = lerp_angle(rotation, rot, 10 * delta)
