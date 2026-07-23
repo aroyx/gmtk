@@ -22,8 +22,28 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_pressed("move_left"):
 		input_dir.x -= 1
-		
-	position += input_dir.normalized() * speed * delta
+	
+	var speed_multiplier = 1
+	if Input.is_action_pressed("player_run"):
+		speed_multiplier = 2
+		# This is for prototyping, remove later together with the else block
+		$AnimatedSprite2D.modulate = Color.GREEN
+	else:
+		$AnimatedSprite2D.modulate = Color.WHITE
+
+	
+	position += input_dir.normalized() * speed * delta * speed_multiplier
 	
 	# Remove this when our plan is to expand the map beyond the screen size
 	position = position.clamp(Vector2.ZERO + player_size, screen_size - player_size)
+	
+	# Animations
+	if input_dir.x == 0 && input_dir.y == 0:
+		$AnimatedSprite2D.play("idle")
+	elif Input.is_action_pressed("player_run"):
+		$AnimatedSprite2D.play("run")
+	else:
+		$AnimatedSprite2D.play("walk")
+
+	if input_dir != Vector2.ZERO:
+		$AnimatedSprite2D.rotation = input_dir.angle()

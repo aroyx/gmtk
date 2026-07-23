@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb0738xhrqnlr"]
 
-[ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/Player.tscn" id="1_l8lh6"]
+[ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/player/Player.tscn" id="1_l8lh6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fxs14"]
 normal = Vector2(1, 0)

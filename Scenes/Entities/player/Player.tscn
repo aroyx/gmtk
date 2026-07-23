@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dwlmgqc3k5h05"]
+
+[ext_resource type="Script" uid="uid://c5l415iexosfg" path="res://Scenes/Entities/player/player.gd" id="1_v402d"]
+[ext_resource type="Texture2D" uid="uid://debadmwm7ryb" path="res://assets/sprites/player/IDLE1.png" id="2_rsj4h"]
+[ext_resource type="Texture2D" uid="uid://ctcoy63vorcw8" path="res://assets/sprites/player/IDLE2.png" id="3_4kc40"]
+[ext_resource type="Texture2D" uid="uid://b1u7ehuxlptb7" path="res://assets/sprites/player/IDLE3.png" id="4_wmg1a"]
+[ext_resource type="Texture2D" uid="uid://jg2bgf1rfc30" path="res://assets/sprites/player/WALK1.png" id="5_3m754"]
+[ext_resource type="Texture2D" uid="uid://3vg4ualiuw08" path="res://assets/sprites/player/WALK2.png" id="6_46t5s"]
+[ext_resource type="Texture2D" uid="uid://looab7bv07xo" path="res://assets/sprites/player/WALK3.png" id="7_0pa8p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxs14"]
+radius = 32.01562
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkr2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rsj4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4kc40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wmg1a")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3m754")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_46t5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0pa8p")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3m754")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_46t5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0pa8p")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=669370031]
+script = ExtResource("1_v402d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=824887952]
+shape = SubResource("CircleShape2D_fxs14")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=470850823]
+scale = Vector2(0.33249998, 0.33249998)
+sprite_frames = SubResource("SpriteFrames_rkr2n")
+animation = &"idle"
