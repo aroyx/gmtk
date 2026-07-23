@@ -14,7 +14,18 @@ func _ready() -> void:
 	player_size = Vector2(rad, rad)
 
 var facing_dir = "fwd"
-func _process(delta: float) -> void:
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("start_timer"):
+		$TimerCircleSimple.start_countdown(9)
+	
+	if event.is_action_pressed("hide"):
+		if !is_hidden && nearby_bush != null && nearby_bush.hide_ready:
+			hide_player()
+		elif is_hidden:
+			unhide_player()
+
+func _physics_process(delta: float) -> void:
 	var input_dir = Vector2.ZERO
 	if Input.is_action_pressed("move_down"):
 		input_dir.y += 1
@@ -47,6 +58,17 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle_" + facing_dir)
 	else:
 		$AnimatedSprite2D.play("walk_" + facing_dir)
-		
-	if Input.is_action_just_pressed("start_timer"):
-		$TimerCircleSimple.start_countdown(9)
+
+func hide_player() -> void:
+	is_hidden = true
+	visible = false
+	set_physics_process(false)
+	if nearby_bush != null:
+		nearby_bush.player_hiding = true
+
+func unhide_player():
+	is_hidden = false
+	visible = true
+	set_physics_process(true)
+	if nearby_bush != null:
+		nearby_bush.player_hiding = false
