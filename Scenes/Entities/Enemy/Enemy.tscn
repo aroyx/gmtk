@@ -1,41 +1,92 @@
 [gd_scene format=3 uid="uid://d2k3mrrokrh54"]
 
 [ext_resource type="Script" uid="uid://707e0wi6sm6h" path="res://Scenes/Entities/Enemy/enemy.gd" id="1_j1w5s"]
-[ext_resource type="Texture2D" uid="uid://debadmwm7ryb" path="res://assets/sprites/player/IDLE1.png" id="2_e58rf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1w5s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aucjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vomwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2acy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hj3m"]
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1575358229]
 script = ExtResource("1_j1w5s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2024195221]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 9.0
+color = Color(0.94102883, 0, 0.20466527, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1710454240]
 scale = Vector2(0.99260724, 0.9837595)
 shape = SubResource("CircleShape2D_j1w5s")
 
-[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1049903689]
-target_position = Vector2(40, 0)
+[node name="RayCastRight" type="ShapeCast2D" parent="." unique_id=1221738216]
+shape = SubResource("RectangleShape2D_aucjx")
+target_position = Vector2(27, 0)
 collide_with_areas = true
 
-[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1713093152]
+[node name="ColorRect" type="ColorRect" parent="RayCastRight" unique_id=1710456783]
+visible = false
+offset_left = 23.0
+offset_top = -9.0
+offset_right = 39.0
+offset_bottom = 9.0
+color = Color(0.2901961, 1, 1, 1)
+
+[node name="RayCastLeft" type="ShapeCast2D" parent="." unique_id=2063777523]
 scale = Vector2(0.84698516, 1)
-target_position = Vector2(-40, 0)
+shape = SubResource("RectangleShape2D_vomwa")
+target_position = Vector2(-27, 0)
 collide_with_areas = true
 
-[node name="RayCastUp" type="RayCast2D" parent="." unique_id=77714979]
+[node name="ColorRect" type="ColorRect" parent="RayCastLeft" unique_id=136891495]
+visible = false
+offset_left = -48.406986
+offset_top = -9.0
+offset_right = -27.29752
+offset_bottom = 9.0
+color = Color(0.24681434, 0.6516743, 0, 1)
+
+[node name="RayCastUp" type="ShapeCast2D" parent="." unique_id=223845956]
 scale = Vector2(1.0580307, 1)
-target_position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_2acy3")
+target_position = Vector2(0, -27)
 collide_with_areas = true
 
-[node name="RayCastDown" type="RayCast2D" parent="." unique_id=241637759]
+[node name="ColorRect2" type="ColorRect" parent="RayCastUp" unique_id=122479556]
+visible = false
+offset_left = -9.315397
+offset_top = -37.0
+offset_right = 9.451523
+offset_bottom = -17.0
+color = Color(1, 0.32156864, 1, 1)
+
+[node name="RayCastDown" type="ShapeCast2D" parent="." unique_id=1635218099]
 scale = Vector2(1.0059578, 1)
-target_position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_6hj3m")
+target_position = Vector2(0, 27)
 collide_with_areas = true
+
+[node name="ColorRect3" type="ColorRect" parent="RayCastDown" unique_id=1895459383]
+visible = false
+offset_left = -8.946697
+offset_top = 18.0
+offset_right = 9.299826
+offset_bottom = 36.0
+color = Color(0.89773035, 0, 0.18979132, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626398878]
 scale = Vector2(0.0925355, 0.08930796)
-texture = ExtResource("2_e58rf")
 
 [node name="Timer" type="Timer" parent="." unique_id=99083139]
+wait_time = 6.812
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
