@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bqr72lmj0cplu"]
+
+[ext_resource type="Script" uid="uid://r8wufdisep4h" path="res://Scenes/World/UI/main_menu.gd" id="1_7uid3"]
+[ext_resource type="Texture2D" uid="uid://cc66jnt120ow6" path="res://assets/sprites/environment/text_box.png" id="1_pwshr"]
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="2_8231a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxs14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkr2n"]
+content_margin_top = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ibra"]
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1bqu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm5d2"]
+
+[node name="MainMenu" type="Node2D" unique_id=496318880]
+script = ExtResource("1_7uid3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180815739]
+position = Vector2(576, 324)
+scale = Vector2(2.9999998, 1.6875)
+texture = ExtResource("1_pwshr")
+
+[node name="Control" type="Control" parent="Sprite2D" unique_id=1820042342]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.00003
+offset_top = -192.0
+offset_right = -192.00003
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Sprite2D/Control" unique_id=1277011642]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("2_8231a")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fxs14")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rkr2n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0ibra")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a1bqu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vm5d2")
+text = "Start game!"
+
+[connection signal="pressed" from="Sprite2D/Control/Button" to="." method="_on_button_pressed"]
