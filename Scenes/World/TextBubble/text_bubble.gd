@@ -18,6 +18,8 @@ var sayer
 signal finished_displaying()
 
 func display_text(text_to_display: String, node) -> void:
+	UiSound.play_sound_click()
+
 	sayer = node
 	
 	text = text_to_display

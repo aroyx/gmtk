@@ -117,6 +117,7 @@ func on_option_clicked(child):
 
 
 func _on_button_pressed() -> void:
+	UiSound.play_sound_click()
 	if option_selected:
 		option_selected = false 
 		load_question()

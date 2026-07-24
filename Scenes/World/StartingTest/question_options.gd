@@ -14,3 +14,5 @@ func set_tick_visible(yes: bool = true):
 
 func _on_button_pressed() -> void:
 	option_pressed.emit(self)
+	UiSound.play_sound_click()
+	print("yay:" + $Label.text)
