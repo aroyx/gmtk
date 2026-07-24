@@ -127,11 +127,15 @@ position = Vector2(2.9093628, 0.90937805)
 shape = SubResource("CircleShape2D_fxs14")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=470850823]
+texture_filter = 3
 position = Vector2(10.000001, -98)
 scale = Vector2(3.9402678, 3.9402678)
 sprite_frames = SubResource("SpriteFrames_rkr2n")
 animation = &"walk_left"
 metadata/_edit_group_ = true
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=499005495]
-position = Vector2(-84, -223)
+[node name="TextBubbleMarker" type="Marker2D" parent="." unique_id=499005495]
+position = Vector2(-106, -208)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1526783672]
+position_smoothing_enabled = true

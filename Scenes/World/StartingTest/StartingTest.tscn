@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cmasyjpmwb50q"]
+
+[ext_resource type="Script" uid="uid://bfiwh6alie2bb" path="res://Scenes/World/StartingTest/starting_test.gd" id="1_7xyfy"]
+[ext_resource type="Texture2D" uid="uid://bcyp14d6cnj8m" path="res://assets/sprites/environment/starting_test/paper_texture.jpg" id="1_y5opl"]
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="2_g7hey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxs14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0as5"]
+content_margin_top = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d45cq"]
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00mkg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2alye"]
+
+[node name="StartingTest" type="Node2D" unique_id=299329055]
+script = ExtResource("1_7xyfy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1676259922]
+position = Vector2(578.6666, 325.25)
+scale = Vector2(0.6055556, 0.6125001)
+texture = ExtResource("1_y5opl")
+
+[node name="UI" type="Control" parent="." unique_id=224716402]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=336214898]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.538
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=939441237]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Question" type="Label" parent="UI/MarginContainer/VBoxContainer" unique_id=1016096795]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g7hey")
+theme_override_font_sizes/font_size = 63
+text = "1. Which one of the following is two zero two four?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OptionsContainer" type="GridContainer" parent="UI/MarginContainer/VBoxContainer" unique_id=328886377]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer" unique_id=846704915]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/margin_right = 80
+
+[node name="Button" type="Button" parent="UI/MarginContainer/VBoxContainer/MarginContainer" unique_id=1057995322]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0.4, 0.92941177, 1)
+theme_override_colors/font_focus_color = Color(0, 0.16078432, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.24908268, 0.60276353, 1)
+theme_override_colors/font_hover_color = Color(9.048581e-06, 0.39678806, 0.92226154, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.16078432, 0.4117647, 1)
+theme_override_colors/font_disabled_color = Color(0.18000522, 0.18000475, 0.18000484, 0.5019608)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0.4)
+theme_override_fonts/font = ExtResource("2_g7hey")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fxs14")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d0as5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d45cq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_00mkg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2alye")
+text = "Continue"
+
+[connection signal="pressed" from="UI/MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

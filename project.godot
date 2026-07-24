@@ -17,11 +17,18 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 [autoload]
 
 DialogueManager="*uid://d0ncpcbyvhna4"
+UiSound="*uid://b2mxwsl2ojrbm"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor]
+
+movie_writer/size/mode=0
+movie_writer/size/resizable=true
 
 [editor_plugins]
 
@@ -30,6 +37,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 hiding_places="These are the entities where the player can hide"
+world_object=""
 
 [input]
 
