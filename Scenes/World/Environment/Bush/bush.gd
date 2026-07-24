@@ -35,5 +35,8 @@ func _process(delta: float) -> void:
 	time_passed += delta
 	$Sprite2D.skew = sin(time_passed * 20.0) * 0.06
 
+func player_is_hidden():
+	$Label.text = ""
+
 func tried_to_hide_with_failure():
 	$Label.text = "You have to wait for the timer to run out!"

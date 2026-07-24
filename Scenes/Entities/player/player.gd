@@ -36,11 +36,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			if nearby_bush != null:
 				nearby_bush.tried_to_hide_with_failure()
-
+	
 	if event.is_action_pressed("interact"):
 		DialogueManager.start_dialog(marker.global_position, lines, self)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var input_dir = Vector2.ZERO
 	if Input.is_action_pressed("move_down"):
 		input_dir.y += 1
@@ -80,6 +80,7 @@ func hide_player() -> void:
 	set_physics_process(false)
 	if nearby_bush != null:
 		nearby_bush.player_hiding = true
+		nearby_bush.player_is_hidden()
 
 func unhide_player():
 	is_hidden = false
