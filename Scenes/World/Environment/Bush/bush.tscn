@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c8fawvit0jiey" path="res://Scenes/Entities/TimerCircle/TimerCircleSimple.tscn" id="1_61gv1"]
 [ext_resource type="Script" uid="uid://q2kfrjodaypc" path="res://Scenes/World/Environment/Bush/bush.gd" id="1_q64pp"]
 [ext_resource type="Texture2D" uid="uid://bgrolisthhl13" path="res://assets/sprites/environment/treeGreen_small.png" id="1_ta1ik"]
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="4_gjoba"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkr2n"]
 radius = 26.0
@@ -12,7 +13,6 @@ radius = 74.330345
 
 [node name="Bush" type="StaticBody2D" unique_id=887509664 groups=["hiding_places"]]
 script = ExtResource("1_q64pp")
-metadata/_edit_group_ = true
 
 [node name="TimerCircleSimple" parent="." unique_id=302309931 instance=ExtResource("1_61gv1")]
 scale = Vector2(3.285, 3.285)
@@ -32,6 +32,20 @@ shape = SubResource("CircleShape2D_0ibra")
 
 [node name="Timer" type="Timer" parent="." unique_id=125305903]
 one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=989908348]
+z_index = 5
+z_as_relative = false
+custom_minimum_size = Vector2(300, 0)
+offset_left = -149.0
+offset_top = -116.0
+offset_right = 151.0
+offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("4_gjoba")
+theme_override_font_sizes/font_size = 26
+text = "press 'e' to hide"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="Sensor" to="." method="_on_sensor_body_entered"]
 [connection signal="body_exited" from="Sensor" to="." method="_on_sensor_body_exited"]

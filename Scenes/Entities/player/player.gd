@@ -33,6 +33,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			hide_player()
 		elif is_hidden:
 			unhide_player()
+		else:
+			if nearby_bush != null:
+				nearby_bush.tried_to_hide_with_failure()
+
 	if event.is_action_pressed("interact"):
 		DialogueManager.start_dialog(marker.global_position, lines, self)
 
