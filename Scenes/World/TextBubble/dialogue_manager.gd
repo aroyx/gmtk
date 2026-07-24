@@ -11,23 +11,26 @@ var text_box_pos: Vector2
 var is_dialog_active = false
 var can_advance_line = false
 
-func start_dialog(pos: Vector2, lines: Array[String]):
+var curr_sayer_node
+
+func start_dialog(pos: Vector2, lines: Array[String], node):
 	if is_dialog_active:
 		return
 	
 	dialog_lines = lines
 	text_box_pos = pos
 	
-	_show_text_box()
+	curr_sayer_node = node
+	_show_text_box(curr_sayer_node)
 	
 	is_dialog_active = true
 
-func _show_text_box():
+func _show_text_box(node):
 	text_box = text_box_scene.instantiate()
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
 	text_box.global_position = text_box_pos
-	text_box.display_text(dialog_lines[curr_line_index])
+	text_box.display_text(dialog_lines[curr_line_index], node)
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
@@ -46,4 +49,4 @@ func _unhandled_input(event: InputEvent) -> void:
 			curr_line_index = 0
 			return
 		
-		_show_text_box()
+		_show_text_box(curr_sayer_node)

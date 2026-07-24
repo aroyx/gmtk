@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://bbfhfukq2dvek"]
 
-[ext_resource type="Script" uid="uid://cd7q2nuodqdst" path="res://Scenes/World/StartingTest/question_options.gd" id="1_tr6fe"]
-[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="1_ueq24"]
-[ext_resource type="Texture2D" uid="uid://caetdeadxb4sl" path="res://assets/sprites/environment/starting_test/tick_mark.png" id="2_tr6fe"]
+[ext_resource type="Script" uid="uid://cd7q2nuodqdst" path="res://Scenes/World/StartingTest/question_options.gd" id="1_gvb2w"]
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="2_ga532"]
+[ext_resource type="Texture2D" uid="uid://caetdeadxb4sl" path="res://assets/sprites/environment/starting_test/tick_mark.png" id="3_f7db6"]
 
 [node name="QuestionOptions" type="MarginContainer" unique_id=966828874]
 size_flags_horizontal = 2
 size_flags_vertical = 4
-script = ExtResource("1_tr6fe")
+script = ExtResource("1_gvb2w")
 
 [node name="Label" type="Label" parent="." unique_id=1460909507]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_ueq24")
+theme_override_fonts/font = ExtResource("2_ga532")
 theme_override_font_sizes/font_size = 40
 text = "a. 2024 this is not right! I am being faluted"
 autowrap_mode = 2
@@ -25,7 +25,7 @@ modulate = Color(0.021392, 0.5669353, 0.7678271, 1)
 texture_filter = 1
 position = Vector2(21, 15)
 scale = Vector2(1.1124998, 1.1124998)
-texture = ExtResource("2_tr6fe")
+texture = ExtResource("3_f7db6")
 
 [node name="Button" type="Button" parent="." unique_id=285294528]
 modulate = Color(1, 1, 1, 0)

@@ -14,6 +14,7 @@ func _ready() -> void:
 	player_size = Vector2(rad, rad)
 
 var facing_dir = "fwd"
+@onready var marker = $TextBubbleMarker
 
 var lines: Array[String] = [
 	"Hey! Are you a nice person?",
@@ -33,7 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif is_hidden:
 			unhide_player()
 	if event.is_action_pressed("interact"):
-		DialogueManager.start_dialog($TextBubbleMarker.global_position, lines)
+		DialogueManager.start_dialog(marker.global_position, lines, self)
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector2.ZERO
