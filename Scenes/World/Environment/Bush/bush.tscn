@@ -36,6 +36,7 @@ one_shot = true
 [node name="Label" type="Label" parent="." unique_id=989908348]
 z_index = 5
 z_as_relative = false
+texture_filter = 1
 custom_minimum_size = Vector2(300, 0)
 offset_left = -149.0
 offset_top = -116.0
