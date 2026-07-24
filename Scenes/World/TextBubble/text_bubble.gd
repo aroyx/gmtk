@@ -2,6 +2,7 @@ extends PanelContainer
 
 @onready var label = $Label
 @onready var timer = $LetterDisplayTimer
+@onready var sprite = $Sprite2D
 
 const MAX_WIDTH = 500
 
@@ -31,6 +32,7 @@ func display_text(text_to_display: String) -> void:
 	global_position.y -= size.y + 24.0
 	
 	label.text = ""
+	_position_pointer_sprite() # points to the sayer
 	_display_letter()
 
 func _display_letter() -> void:
@@ -51,3 +53,6 @@ func _display_letter() -> void:
 
 func _on_letter_display_timer_timeout() -> void:
 	_display_letter()
+
+func _position_pointer_sprite() -> void:
+	sprite.position = Vector2(size.x / 2, size.y)

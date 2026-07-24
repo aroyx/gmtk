@@ -133,5 +133,8 @@ sprite_frames = SubResource("SpriteFrames_rkr2n")
 animation = &"walk_left"
 metadata/_edit_group_ = true
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=499005495]
-position = Vector2(-84, -223)
+[node name="TextBubbleMarker" type="Marker2D" parent="." unique_id=499005495]
+position = Vector2(-106, -208)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1526783672]
+position_smoothing_enabled = true

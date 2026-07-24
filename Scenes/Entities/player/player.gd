@@ -33,7 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif is_hidden:
 			unhide_player()
 	if event.is_action_pressed("interact"):
-		DialogueManager.start_dialog($Marker2D.global_position, lines)
+		DialogueManager.start_dialog($TextBubbleMarker.global_position, lines)
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Vector2.ZERO
