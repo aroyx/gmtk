@@ -46,8 +46,8 @@ var questions = [
 		"options": [
 			"Isnt that just a kiss?", 
 			"That’s actually what caused the Big Bang.", 
-			"c++ sucks",
-			"supercalifragilisticexpialidocious"
+			"ask buddha",
+			"._."
 		]
 	}, {
 		"question": "Can Jesus microwave a burrito so hot that even he can't eat it?",
@@ -56,6 +56,14 @@ var questions = [
 			"No", 
 			"Probably",
 			"Are you a simp son?"
+		]
+	}, {
+		"question": "What is 3 and 3?",
+		"options": [
+			"9", 
+			"6", 
+			"33",
+			"27"
 		]
 	}
 ]
