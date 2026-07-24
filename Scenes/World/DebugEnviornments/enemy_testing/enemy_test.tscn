@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://xogc66rr8i1g"]
+
+[ext_resource type="PackedScene" uid="uid://dlngmg7k4wp0m" path="res://Scenes/World/DebugEnviornments/enemy_testing/enemy_test_object.tscn" id="1_pp1a1"]
+[ext_resource type="PackedScene" uid="uid://d2k3mrrokrh54" path="res://Scenes/Entities/Enemy/Enemy.tscn" id="1_sryfq"]
+
+[node name="EnemyTestWorld" type="Node2D" unique_id=909082628]
+
+[node name="Enemy" parent="." unique_id=1575358229 instance=ExtResource("1_sryfq")]
+position = Vector2(511, 302)
+scale = Vector2(2, 2)
+step_size = 30.0
+
+[node name="TempObject" parent="." unique_id=741587840 instance=ExtResource("1_pp1a1")]
+position = Vector2(429, 302)
+scale = Vector2(3, 3)
+
+[node name="TempObject3" parent="." unique_id=605127522 instance=ExtResource("1_pp1a1")]
+position = Vector2(595, 304)
+scale = Vector2(3, 3)
+
+[node name="TempObject5" parent="." unique_id=758848063 instance=ExtResource("1_pp1a1")]
+position = Vector2(513, 382.00003)
+scale = Vector2(3, 3)
+
+[node name="TempObject4" parent="." unique_id=1019691246 instance=ExtResource("1_pp1a1")]
+position = Vector2(505.00003, 130)
+scale = Vector2(3, 3)
+
+[node name="TempObject2" parent="." unique_id=1898819143 instance=ExtResource("1_pp1a1")]
+position = Vector2(208, 27)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1066927986]
+offset_right = 143.0
+offset_bottom = 36.0
+bbcode_enabled = true
