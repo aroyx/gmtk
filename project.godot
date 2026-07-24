@@ -20,8 +20,14 @@ DialogueManager="*uid://d0ncpcbyvhna4"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor]
+
+movie_writer/size/mode=0
+movie_writer/size/resizable=true
 
 [editor_plugins]
 
