@@ -18,7 +18,7 @@ position = Vector2(513, 382.00003)
 scale = Vector2(3, 3)
 
 [node name="TempObject4" parent="." unique_id=1019691246 instance=ExtResource("1_pp1a1")]
-position = Vector2(512, 220)
+position = Vector2(510, 104)
 scale = Vector2(3, 3)
 
 [node name="TempObject2" parent="." unique_id=1898819143 instance=ExtResource("1_pp1a1")]

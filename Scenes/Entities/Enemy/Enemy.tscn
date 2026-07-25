@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://d2k3mrrokrh54"]
 
 [ext_resource type="Script" uid="uid://707e0wi6sm6h" path="res://Scenes/Entities/Enemy/enemy.gd" id="1_j1w5s"]
+[ext_resource type="Texture2D" uid="uid://dba1j5vlhn5d" path="res://assets/sprites/npc_student/stu_idle_back1.png" id="2_gyerv"]
+[ext_resource type="Texture2D" uid="uid://yjaukdu34k5q" path="res://assets/sprites/npc_student/stu_idle_back2.png" id="3_pk5un"]
+[ext_resource type="Texture2D" uid="uid://b68qtv7rq5uhh" path="res://assets/sprites/npc_student/stu_idle_forward1.png" id="4_kypml"]
+[ext_resource type="Texture2D" uid="uid://do0chy8xwgjdy" path="res://assets/sprites/npc_student/stu_idle_forward2.png" id="5_l3nun"]
+[ext_resource type="Texture2D" uid="uid://bjntwngugimu7" path="res://assets/sprites/npc_student/stu_idle_left1.png" id="6_a2kmc"]
+[ext_resource type="Texture2D" uid="uid://bbl3sjj05wp0d" path="res://assets/sprites/npc_student/stu_idle_left2.png" id="7_fl07y"]
+[ext_resource type="Texture2D" uid="uid://8vagwygqy01c" path="res://assets/sprites/npc_student/stu_idle_right1.png" id="8_mtvcj"]
+[ext_resource type="Texture2D" uid="uid://lwqvrr3lw647" path="res://assets/sprites/npc_student/stu_idle_right2.png" id="9_biqio"]
+[ext_resource type="Texture2D" uid="uid://c0e2xn2ag1hqs" path="res://assets/sprites/npc_student/stu_walk_back-step2.png" id="10_35u6b"]
+[ext_resource type="Texture2D" uid="uid://brq6h5dfah1v0" path="res://assets/sprites/npc_student/stu_walk_back_step1.png" id="11_dss0a"]
+[ext_resource type="Texture2D" uid="uid://blrd2r377uay4" path="res://assets/sprites/npc_student/stu_walk_forward_step1.png" id="12_7p1lc"]
+[ext_resource type="Texture2D" uid="uid://lvs84svwbobn" path="res://assets/sprites/npc_student/stu_walk_forward_step2.png" id="13_dwyik"]
+[ext_resource type="Texture2D" uid="uid://ca13rdmfos33p" path="res://assets/sprites/npc_student/stu_walk_left_step1.png" id="14_4nm77"]
+[ext_resource type="Texture2D" uid="uid://daoni5v7rcf8x" path="res://assets/sprites/npc_student/stu_walk_left_step2.png" id="15_08vgg"]
+[ext_resource type="Texture2D" uid="uid://cpgxsqec7g6tg" path="res://assets/sprites/npc_student/stu_walk_right_step1.png" id="16_sdp52"]
+[ext_resource type="Texture2D" uid="uid://c61rdb62df2hg" path="res://assets/sprites/npc_student/stu_walk_right_step2.png" id="17_crrqd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1w5s"]
 
@@ -11,6 +27,97 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2acy3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hj3m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mris"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gyerv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pk5un")
+}],
+"loop": 1,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kypml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l3nun")
+}],
+"loop": 1,
+"name": &"idle_fwd",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_a2kmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fl07y")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mtvcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_biqio")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_35u6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dss0a")
+}],
+"loop": 1,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_7p1lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dwyik")
+}],
+"loop": 1,
+"name": &"walk_fwd",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_4nm77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_08vgg")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_sdp52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_crrqd")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1575358229]
 script = ExtResource("1_j1w5s")
@@ -74,11 +181,16 @@ offset_right = 9.299826
 offset_bottom = 36.0
 color = Color(0.89773035, 0, 0.18979132, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626398878]
-scale = Vector2(0.0925355, 0.08930796)
-
 [node name="Timer" type="Timer" parent="." unique_id=99083139]
 wait_time = 6.812
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=850439929]
+texture_filter = 3
+position = Vector2(0, 8.34465e-07)
+scale = Vector2(0.5, 0.44999993)
+sprite_frames = SubResource("SpriteFrames_2mris")
+animation = &"idle_fwd"
+metadata/_edit_group_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
