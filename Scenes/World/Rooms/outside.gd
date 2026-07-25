@@ -44,8 +44,10 @@ func _ready() -> void:
 		gRooms.OutPos.CLASS:
 			$Player.global_position = $Markers/Class.position
 	if gRooms.story_state == gRooms.StoryState.INIT:
+			$Player.start_timer_to_death(30)
 			call_deferred("do_starting_stuff")
 	elif gRooms.story_state == gRooms.StoryState.GO_HOME:
+		$Player.start_timer_to_death(20)
 		call_deferred("do_gohome_stuff")
 	elif gRooms.story_state == gRooms.StoryState.NEXT_DAY:
 			call_deferred("do_next_day_stuff")

@@ -137,3 +137,7 @@ metadata/_edit_group_ = true
 
 [node name="TextBubbleMarker" type="Marker2D" parent="." unique_id=499005495]
 position = Vector2(-106, -208)
+
+[node name="DeathTimer" type="Timer" parent="." unique_id=777810394]
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

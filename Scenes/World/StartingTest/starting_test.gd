@@ -71,6 +71,13 @@ var questions = [
 func _ready() -> void:
 	load_question()
 
+func _process(delta: float) -> void:
+	$TimerCircle.rotation -= (PI / 5) * delta
+
+func timer_reset():
+	$Timer.start(15)
+	$TimerCircle.start_countdown(15)
+
 var curr_question_index = 0
 
 func load_question():
@@ -78,6 +85,8 @@ func load_question():
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/class_room.tscn")
 		gRooms.story_state = gRooms.StoryState.TEST_END
 		return
+	
+	timer_reset()
 	
 	for child in options.get_children():
 		options.remove_child(child)
@@ -122,3 +131,6 @@ func _on_button_pressed() -> void:
 	if option_selected:
 		option_selected = false 
 		load_question()
+
+func _on_timer_timeout() -> void:
+	load_question()

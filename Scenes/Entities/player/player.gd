@@ -17,9 +17,6 @@ var facing_dir = "fwd"
 @onready var marker = $TextBubbleMarker
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("start_timer"):
-		$TimerCircleSimple.start_countdown(9)
-	
 	if event.is_action_pressed("hide"):
 		if !is_hidden && nearby_bush != null && nearby_bush.hide_ready:
 			hide_player()
@@ -28,6 +25,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			if nearby_bush != null:
 				nearby_bush.tried_to_hide_with_failure()
+
+func start_timer_to_death(time: float):
+	$DeathTimer.start(time)
+	$TimerCircleSimple.start_countdown(time)
 
 func playerSay(lines: Array[String]):
 	DialogueManager.start_dialog(marker.global_position, lines, self)
@@ -80,3 +81,7 @@ func unhide_player():
 	set_physics_process(true)
 	if nearby_bush != null:
 		nearby_bush.player_hiding = false
+
+
+func _on_death_timer_timeout() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Environment/game_over.tscn")

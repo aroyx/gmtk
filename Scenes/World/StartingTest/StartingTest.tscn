@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bfiwh6alie2bb" path="res://Scenes/World/StartingTest/starting_test.gd" id="1_7xyfy"]
 [ext_resource type="Texture2D" uid="uid://bcyp14d6cnj8m" path="res://assets/sprites/environment/starting_test/paper_texture.jpg" id="1_y5opl"]
 [ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="2_g7hey"]
+[ext_resource type="PackedScene" uid="uid://bcny42etm7bk0" path="res://Scenes/Entities/TimerCircle/TimerCircle.tscn" id="4_7xyfy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxs14"]
 
@@ -95,4 +96,13 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_00mkg")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2alye")
 text = "Continue"
 
+[node name="TimerCircle" parent="." unique_id=1489893318 instance=ExtResource("4_7xyfy")]
+position = Vector2(576, 560)
+scale = Vector2(4.035, 4.035)
+color = Color(0.20662963, 0.25563714, 0.32562193, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=550525069]
+one_shot = true
+
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

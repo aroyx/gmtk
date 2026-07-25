@@ -35,7 +35,6 @@ func _ready() -> void:
 	$AnimatedSprite2D2.play()
 	$AnimatedSprite2D3.play()
 	$AnimatedSprite2D4.play()
-	$AnimatedSprite2D5.play()
 	$TableChairs2/Label.hide()
 	if gRooms.story_state == gRooms.StoryState.FIND_CLASS:
 		call_deferred("trigger_teacher_findclass_dialogue")
