@@ -4,6 +4,8 @@ extends CharacterBody2D
 var screen_size: Vector2
 var player_size: Vector2
 
+var object_around_npc_count: int
+
 # RayCast2D Components
 @onready var ray_cast_up: ShapeCast2D = $RayCastUp
 @onready var ray_cast_down: ShapeCast2D = $RayCastDown
@@ -16,6 +18,7 @@ var player_size: Vector2
 @onready var color_rect_2: ColorRect = $RayCastLeft/ColorRect
 @onready var color_rect_3: ColorRect = $RayCastUp/ColorRect2
 @onready var color_rect_4: ColorRect = $RayCastDown/ColorRect3
+
 
 
 func _ready() -> void:
@@ -122,6 +125,12 @@ func check_raycast(ray_cast: ShapeCast2D, dir: String):
 		
 		if collider.is_in_group("world_object"):
 			print("a world object detected here.")
+			
+			if object_around_npc_count >= 4:
+				print("can't walk anymore lol")
+				return
+						
+			object_around_npc_count += 1
 			walk_randomly()
 		elif collider.is_in_group("player"):
 			print("game over")
