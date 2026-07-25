@@ -75,7 +75,8 @@ var curr_question_index = 0
 
 func load_question():
 	if curr_question_index >= questions.size():
-		get_tree().change_scene_to_file("res://Scenes/World/MainWorld.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/class_room.tscn")
+		gRooms.story_state = gRooms.StoryState.TEST_END
 		return
 	
 	for child in options.get_children():

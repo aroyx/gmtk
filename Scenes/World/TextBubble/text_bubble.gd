@@ -41,7 +41,6 @@ func display_text(text_to_display: String, node) -> void:
 	_position_pointer_sprite() # points to the sayer
 	_display_letter()
 
-
 func _display_letter() -> void:
 	label.text += text[letter_index]
 	letter_index += 1

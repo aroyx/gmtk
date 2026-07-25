@@ -16,14 +16,6 @@ func _ready() -> void:
 var facing_dir = "fwd"
 @onready var marker = $TextBubbleMarker
 
-var lines: Array[String] = [
-	"Hey! Are you a nice person?",
-	"Because I am a really nice person!",
-	"Actually, ik we just met eachother....",
-	"but the thing is.....",
-	"I LOVE YOU!! <insert_heart_emoji>"
-]
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("start_timer"):
 		$TimerCircleSimple.start_countdown(9)
@@ -36,9 +28,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			if nearby_bush != null:
 				nearby_bush.tried_to_hide_with_failure()
-	
-	if event.is_action_pressed("interact"):
-		DialogueManager.start_dialog(marker.global_position, lines, self)
+
+func playerSay(lines: Array[String]):
+	DialogueManager.start_dialog(marker.global_position, lines, self)
 
 func _physics_process(_delta: float) -> void:
 	var input_dir = Vector2.ZERO

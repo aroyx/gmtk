@@ -32,7 +32,7 @@ modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_imcko")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 
 [node name="LetterDisplayTimer" type="Timer" parent="." unique_id=23757250]
 one_shot = true

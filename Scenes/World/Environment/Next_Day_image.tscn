@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bgp11diyfkqq7"]
+
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="1_pkbt7"]
+[ext_resource type="Script" uid="uid://dun7khlwdlad0" path="res://Scenes/World/Environment/next_day_image.gd" id="1_vanfa"]
+
+[node name="NextDayImage" type="Node2D" unique_id=463241112]
+script = ExtResource("1_vanfa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1680561208]
+offset_right = 1161.0
+offset_bottom = 654.0
+
+[node name="Label" type="Label" parent="." unique_id=46445676]
+offset_right = 1158.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pkbt7")
+theme_override_font_sizes/font_size = 165
+text = "one day later..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=645231363]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
