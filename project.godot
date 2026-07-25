@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GMTK"
-run/main_scene="uid://bb0738xhrqnlr"
+run/main_scene="uid://bqr72lmj0cplu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]

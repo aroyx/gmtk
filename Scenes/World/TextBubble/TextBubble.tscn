@@ -29,6 +29,7 @@ texture = ExtResource("3_3n4jx")
 
 [node name="Label" type="Label" parent="." unique_id=1398397385]
 modulate = Color(0, 0, 0, 1)
+texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_imcko")
 theme_override_font_sizes/font_size = 40

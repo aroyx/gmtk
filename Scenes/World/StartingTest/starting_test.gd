@@ -75,6 +75,7 @@ var curr_question_index = 0
 
 func load_question():
 	if curr_question_index >= questions.size():
+		get_tree().change_scene_to_file("res://Scenes/World/MainWorld.tscn")
 		return
 	
 	for child in options.get_children():
@@ -114,7 +115,6 @@ func on_option_clicked(child):
 		opt.set_tick_visible(false)
 	
 	child.set_tick_visible(true)
-
 
 func _on_button_pressed() -> void:
 	UiSound.play_sound_click()
