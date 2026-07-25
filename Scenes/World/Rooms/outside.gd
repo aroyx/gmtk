@@ -16,6 +16,7 @@ func _on_mini_hall_entry_2_body_entered(body: Node2D) -> void:
 
 func _on_hall_entry_body_entered(body: Node2D) -> void:
 	if body is Player:
+		gRooms.door_dir = gRooms.DoorDir.RIGHT
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/hall.tscn")
 
 func _on_class_room_entry_body_entered(body: Node2D) -> void:

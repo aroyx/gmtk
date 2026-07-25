@@ -86,6 +86,16 @@ position = Vector2(2256, 256)
 scale = Vector2(0.60738254, 0.60738254)
 texture = ExtResource("4_tsjyj")
 
+[node name="Sprite2D2" type="Sprite2D" parent="temp" unique_id=106077822]
+position = Vector2(-2556, 1849.0001)
+scale = Vector2(-0.25, 0.24)
+texture = ExtResource("4_tsjyj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="temp" unique_id=1871201132]
+position = Vector2(-1975, 3677.0002)
+scale = Vector2(-0.25, 0.24)
+texture = ExtResource("4_tsjyj")
+
 [node name="Images" type="Sprite2D" parent="temp" unique_id=409268027]
 position = Vector2(1595.6857, 123.685715)
 rotation = 2.8797932
