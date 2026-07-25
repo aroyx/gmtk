@@ -64,7 +64,7 @@ func _on_letter_display_timer_timeout() -> void:
 func _position_pointer_sprite() -> void:
 	sprite.position = Vector2(size.x / 2, size.y)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_instance_valid(sayer) and "marker" in sayer:
 		var target_pos = sayer.marker.global_position
 		target_pos.x -= size.x / 2.0

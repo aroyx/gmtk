@@ -15,14 +15,6 @@
 [node name="Enemy" type="CharacterBody2D" unique_id=1575358229]
 script = ExtResource("1_j1w5s")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2024195221]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 9.0
-color = Color(0.94102883, 0, 0.20466527, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1710454240]
 scale = Vector2(0.99260724, 0.9837595)
 shape = SubResource("CircleShape2D_j1w5s")
