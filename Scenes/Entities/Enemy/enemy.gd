@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var step_size: float = 100.0
 @export var move_speed: float = 150.0
 
+@onready var circle_sprite := $AnimatedSprite2D/TimerCircle
+
 var screen_size: Vector2
 var player_size: Vector2
 
@@ -23,6 +25,8 @@ var player_size: Vector2
 var DIRECTIONS: Dictionary
 var RAYCASTS: Dictionary
 var COLOR_RECTS: Dictionary
+
+const MAX_TIME := 8.0
 
 var target_position: Vector2
 var is_moving: bool = false
@@ -53,6 +57,13 @@ func _ready() -> void:
 	}
 
 	set_random_timer()
+
+func _process(delta: float) -> void:
+	if timer.wait_time <= 0:
+		return
+
+	var progress = 1.0 - (timer.time_left / timer.wait_time)
+	circle_sprite.material.set_shader_parameter("progress", progress)
 
 
 func _physics_process(_delta: float) -> void:
@@ -122,9 +133,9 @@ func update_animation(dir: Vector2) -> void:
 			animated_sprite_2d.play("walk_left")
 	else:
 		if dir.y > 0:
-			animated_sprite_2d.play("walk_back")
-		else:
 			animated_sprite_2d.play("walk_fwd")
+		else:
+			animated_sprite_2d.play("walk_back")
 
 
 func make_ShapeCast_visible(current_shapeCast: ColorRect) -> void:

@@ -1,5 +1,25 @@
 [gd_scene format=3 uid="uid://dobabqhoenaya"]
 
 [ext_resource type="PackedScene" uid="uid://d2k3mrrokrh54" path="res://Scenes/Entities/Enemy/Enemy.tscn" id="1_lvrxx"]
+[ext_resource type="Texture2D" uid="uid://cuhxi3cih3tec" path="res://assets/sprites/canteens/timer circle.png" id="2_aj12j"]
+[ext_resource type="Shader" uid="uid://drlrmy3mwkh17" path="res://Scenes/Entities/Student/circle_shader.gdshader" id="2_ijnop"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aj12j"]
+shader = ExtResource("2_ijnop")
+shader_parameter/start_color = Color(0, 1, 0, 1)
+shader_parameter/end_color = Color(1, 0, 0, 1)
+shader_parameter/progress = 0.0
 
 [node name="Student" unique_id=1575358229 instance=ExtResource("1_lvrxx")]
+
+[node name="AnimatedSprite2D" parent="." index="6" unique_id=850439929]
+position = Vector2(0, -8.8214847e-07)
+scale = Vector2(0.5, 0.45)
+animation = &"walk_fwd"
+
+[node name="TimerCircle" type="Sprite2D" parent="AnimatedSprite2D" index="0" unique_id=1792976377]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_aj12j")
+position = Vector2(0, 19.999985)
+scale = Vector2(0.120000005, 0.11851854)
+texture = ExtResource("2_aj12j")

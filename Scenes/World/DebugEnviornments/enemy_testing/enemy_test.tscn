@@ -6,24 +6,24 @@
 [node name="EnemyTestWorld" type="Node2D" unique_id=909082628]
 
 [node name="TempObject" parent="." unique_id=741587840 instance=ExtResource("1_pp1a1")]
-position = Vector2(429, 302)
-scale = Vector2(3, 3)
+position = Vector2(200, 296)
+scale = Vector2(4, 4)
 
 [node name="TempObject3" parent="." unique_id=605127522 instance=ExtResource("1_pp1a1")]
-position = Vector2(595, 304)
-scale = Vector2(3, 3)
+position = Vector2(977, 316)
+scale = Vector2(4, 4)
 
 [node name="TempObject5" parent="." unique_id=758848063 instance=ExtResource("1_pp1a1")]
-position = Vector2(513, 382.00003)
-scale = Vector2(3, 3)
+position = Vector2(602, 571)
+scale = Vector2(4, 4)
 
 [node name="TempObject4" parent="." unique_id=1019691246 instance=ExtResource("1_pp1a1")]
-position = Vector2(510, 104)
-scale = Vector2(3, 3)
+position = Vector2(607, 62)
+scale = Vector2(4, 4)
 
 [node name="TempObject2" parent="." unique_id=1898819143 instance=ExtResource("1_pp1a1")]
 position = Vector2(208, 27)
 
 [node name="Student" parent="." unique_id=1575358229 instance=ExtResource("2_sryfq")]
-position = Vector2(512, 299)
-scale = Vector2(2, 2)
+position = Vector2(602, 286)
+scale = Vector2(4, 4)
