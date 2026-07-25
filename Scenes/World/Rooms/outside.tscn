@@ -1,9 +1,14 @@
 [gd_scene format=4 uid="uid://cf8pc124ybout"]
 
 [ext_resource type="Texture2D" uid="uid://b8kh413krfnij" path="res://assets/sprites/wall_floor/tileset.png" id="1_m2vqb"]
+[ext_resource type="Script" uid="uid://cxs4mewl5xhl7" path="res://Scenes/World/Rooms/outside.gd" id="1_tsjyj"]
 [ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/player/Player.tscn" id="2_oxyyf"]
+[ext_resource type="Texture2D" uid="uid://cbqsk65l0jki8" path="res://assets/sprites/temp/2.jpg" id="3_tsjyj"]
+[ext_resource type="Texture2D" uid="uid://wy7hr5yj663e" path="res://assets/sprites/temp/images.png" id="4_tsjyj"]
+[ext_resource type="Texture2D" uid="uid://d024u55fnw2m7" path="res://assets/sprites/temp/images.jpeg" id="5_u7d0t"]
+[ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="6_usuys"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64bog"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qib81"]
 texture = ExtResource("1_m2vqb")
 0:0/0 = 0
 1:0/0 = 0
@@ -13,9 +18,87 @@ texture = ExtResource("1_m2vqb")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rkr2n"]
-sources/0 = SubResource("TileSetAtlasSource_64bog")
+sources/0 = SubResource("TileSetAtlasSource_qib81")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qib81"]
+size = Vector2(144, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsjyj"]
+size = Vector2(140.5, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkr2n"]
+size = Vector2(19, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7d0t"]
+size = Vector2(19, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usuys"]
+size = Vector2(143, 24)
 
 [node name="Outside" type="Node2D" unique_id=929360150]
+script = ExtResource("1_tsjyj")
+
+[node name="temp" type="Node" parent="." unique_id=38850596]
+
+[node name="Label" type="Label" parent="temp" unique_id=1143276860]
+offset_left = -1515.0
+offset_top = -1070.0
+offset_right = -1222.0
+offset_bottom = -991.0
+theme_override_font_sizes/font_size = 58
+text = "staff room"
+
+[node name="Label2" type="Label" parent="temp" unique_id=242533565]
+offset_left = 1792.0
+offset_top = 80.0
+offset_right = 2110.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 58
+text = "school gate"
+
+[node name="Label3" type="Label" parent="temp" unique_id=115146092]
+offset_left = -3336.0
+offset_top = 1200.0
+offset_right = -2897.0
+offset_bottom = 1279.0
+theme_override_font_sizes/font_size = 58
+text = "mini school hall"
+
+[node name="Label4" type="Label" parent="temp" unique_id=109617321]
+offset_left = -2912.0
+offset_top = 2520.0
+offset_right = -2473.0
+offset_bottom = 2599.0
+theme_override_font_sizes/font_size = 58
+text = "school hall"
+
+[node name="Sprite2D" type="Sprite2D" parent="temp" unique_id=1328172680]
+position = Vector2(2256, 256)
+scale = Vector2(0.60738254, 0.60738254)
+texture = ExtResource("4_tsjyj")
+
+[node name="Images" type="Sprite2D" parent="temp" unique_id=409268027]
+position = Vector2(1595.6857, 123.685715)
+rotation = 2.8797932
+scale = Vector2(0.191, -0.191)
+texture = ExtResource("3_tsjyj")
+
+[node name="Label5" type="Label" parent="temp" unique_id=1526207557]
+offset_left = 1552.0
+offset_top = 88.0
+offset_right = 1636.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_usuys")
+theme_override_font_sizes/font_size = 14
+text = "School there"
+
+[node name="Images2" type="Sprite2D" parent="temp" unique_id=425605090]
+position = Vector2(-1173, -1181.9999)
+scale = Vector2(1.2187433, 1.3265313)
+texture = ExtResource("5_u7d0t")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 196.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=170479690]
 texture_filter = 1
@@ -24,37 +107,78 @@ tile_map_data = PackedByteArray("AAAfAAQAAAAAAAEAAAAgAAQAAAAAAAEAAAArAAQAAAAAAAE
 tile_set = SubResource("TileSet_rkr2n")
 
 [node name="Player" parent="." unique_id=669370031 instance=ExtResource("2_oxyyf")]
-position = Vector2(1968, 280)
+position = Vector2(-343, -566)
 scale = Vector2(0.5, 0.5)
 
-[node name="Label" type="Label" parent="." unique_id=1143276860]
-offset_left = -1336.0
-offset_top = -1200.0
-offset_right = -1043.0
-offset_bottom = -1121.0
-theme_override_font_sizes/font_size = 58
-text = "staff room"
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=361300492]
 
-[node name="Label2" type="Label" parent="." unique_id=242533565]
-offset_left = 2160.0
-offset_top = 200.0
-offset_right = 2453.0
-offset_bottom = 279.0
-theme_override_font_sizes/font_size = 58
-text = "school gate"
+[node name="StaffRoomEntry" type="Area2D" parent="." unique_id=207384208]
+position = Vector2(-1183, -1066)
+collision_layer = 0
+metadata/_edit_group_ = true
 
-[node name="Label3" type="Label" parent="." unique_id=115146092]
-offset_left = -3336.0
-offset_top = 1200.0
-offset_right = -2897.0
-offset_bottom = 1279.0
-theme_override_font_sizes/font_size = 58
-text = "mini school hall"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaffRoomEntry" unique_id=1029472949]
+position = Vector2(11, 11)
+shape = SubResource("RectangleShape2D_qib81")
 
-[node name="Label4" type="Label" parent="." unique_id=109617321]
-offset_left = -2728.0
-offset_top = 2536.0
-offset_right = -2289.0
-offset_bottom = 2615.0
-theme_override_font_sizes/font_size = 58
-text = "school hall"
+[node name="MiniHallEntry" type="Area2D" parent="." unique_id=560274352]
+position = Vector2(-3385, 1243)
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniHallEntry" unique_id=2036810467]
+position = Vector2(68.75, 5)
+shape = SubResource("RectangleShape2D_tsjyj")
+
+[node name="MiniHallEntry2" type="Area2D" parent="." unique_id=779486813]
+position = Vector2(-2464, 1851)
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiniHallEntry2" unique_id=1437820136]
+position = Vector2(-30.5, 34.5)
+shape = SubResource("RectangleShape2D_rkr2n")
+
+[node name="HallEntry" type="Area2D" parent="." unique_id=2004361368]
+position = Vector2(-1889, 3686)
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HallEntry" unique_id=2074442225]
+position = Vector2(-30.5, 34.5)
+shape = SubResource("RectangleShape2D_u7d0t")
+
+[node name="ClassRoomEntry" type="Area2D" parent="." unique_id=263941473]
+position = Vector2(3636, 3627)
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClassRoomEntry" unique_id=950213751]
+position = Vector2(-13.5, 20)
+shape = SubResource("RectangleShape2D_usuys")
+
+[node name="Markers" type="Node2D" parent="." unique_id=1359176849]
+
+[node name="StaffRoom" type="Marker2D" parent="Markers" unique_id=1498244236]
+position = Vector2(-1178, -993)
+
+[node name="MiniTop" type="Marker2D" parent="Markers" unique_id=26293595]
+position = Vector2(-3316, 1198)
+
+[node name="MiniRight" type="Marker2D" parent="Markers" unique_id=398618303]
+position = Vector2(-2436, 1896)
+
+[node name="Hall" type="Marker2D" parent="Markers" unique_id=1486355554]
+position = Vector2(-1895, 3720)
+
+[node name="Class" type="Marker2D" parent="Markers" unique_id=1972341976]
+position = Vector2(3625, 3725)
+
+[node name="Start" type="Marker2D" parent="Markers" unique_id=23363017]
+position = Vector2(1899, 283)
+
+[connection signal="body_entered" from="StaffRoomEntry" to="." method="_on_staff_room_entry_body_entered"]
+[connection signal="body_entered" from="MiniHallEntry" to="." method="_on_mini_hall_entry_body_entered"]
+[connection signal="body_entered" from="MiniHallEntry2" to="." method="_on_mini_hall_entry_2_body_entered"]
+[connection signal="body_entered" from="HallEntry" to="." method="_on_hall_entry_body_entered"]
+[connection signal="body_entered" from="ClassRoomEntry" to="." method="_on_class_room_entry_body_entered"]
