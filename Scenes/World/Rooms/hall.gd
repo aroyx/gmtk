@@ -9,10 +9,10 @@ func _ready() -> void:
 
 func _on_mini_hall_body_entered(body: Node2D) -> void:
 	if body is Player:
-		gRooms.door_dir = gRooms.DoorDir.BOTTOM
-		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/mini_hall.tscn")
+		gRooms.out_pos = gRooms.OutPos.HALL_TOP
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/outside.tscn")
 
 func _on_out_side_right_body_entered(body: Node2D) -> void:
 	if body is Player:
-		gRooms.out_pos = gRooms.OutPos.HALL
+		gRooms.out_pos = gRooms.OutPos.HALL_RIGHT
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/outside.tscn")
