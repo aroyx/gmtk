@@ -57,7 +57,7 @@ func _physics_process(_delta: float) -> void:
 	velocity = input_dir.normalized() * speed
 	move_and_slide()
 	# Remove this when our plan is to expand the map beyond the screen size
-	position = position.clamp(Vector2.ZERO + player_size, screen_size - player_size)
+	#position = position.clamp(Vector2.ZERO + player_size, screen_size - player_size)
 	
 	# Animations
 	if input_dir.x > 0:
