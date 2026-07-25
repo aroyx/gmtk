@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://xogc66rr8i1g"]
 
 [ext_resource type="PackedScene" uid="uid://dlngmg7k4wp0m" path="res://Scenes/World/DebugEnviornments/enemy_testing/enemy_test_object.tscn" id="1_pp1a1"]
-[ext_resource type="PackedScene" uid="uid://d2k3mrrokrh54" path="res://Scenes/Entities/Enemy/Enemy.tscn" id="1_sryfq"]
+[ext_resource type="PackedScene" uid="uid://dobabqhoenaya" path="res://Scenes/Entities/Student/student.tscn" id="2_sryfq"]
 
 [node name="EnemyTestWorld" type="Node2D" unique_id=909082628]
-
-[node name="Enemy" parent="." unique_id=1575358229 instance=ExtResource("1_sryfq")]
-position = Vector2(511, 302)
-scale = Vector2(2, 2)
-step_size = 30.0
 
 [node name="TempObject" parent="." unique_id=741587840 instance=ExtResource("1_pp1a1")]
 position = Vector2(429, 302)
@@ -29,7 +24,6 @@ scale = Vector2(3, 3)
 [node name="TempObject2" parent="." unique_id=1898819143 instance=ExtResource("1_pp1a1")]
 position = Vector2(208, 27)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1066927986]
-offset_right = 143.0
-offset_bottom = 36.0
-bbcode_enabled = true
+[node name="Student" parent="." unique_id=1575358229 instance=ExtResource("2_sryfq")]
+position = Vector2(512, 299)
+scale = Vector2(2, 2)
