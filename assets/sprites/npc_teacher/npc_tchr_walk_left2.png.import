@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f7bi03pyoq4g"
-path="res://.godot/imported/classroom_wall_tile.png-0dd29d8031906f6d5179f05b253858da.ctex"
+uid="uid://b40g8snkva5bw"
+path="res://.godot/imported/npc_tchr_walk_left2.png-19862edd6ff3c297c4ea7cb863863e67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/wall_floor/classroom_wall_tile.png"
-dest_files=["res://.godot/imported/classroom_wall_tile.png-0dd29d8031906f6d5179f05b253858da.ctex"]
+source_file="res://assets/sprites/npc_teacher/npc_tchr_walk_left2.png"
+dest_files=["res://.godot/imported/npc_tchr_walk_left2.png-19862edd6ff3c297c4ea7cb863863e67.ctex"]
 
 [params]
 
