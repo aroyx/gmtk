@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d06sc6o51u3cu" path="res://assets/sprites/wall+floor_decor/chair_front.png" id="8_5hfcr"]
 [ext_resource type="Texture2D" uid="uid://gl7d5ie4vcpo" path="res://assets/sprites/wall+floor_decor/table.png" id="8_joqo3"]
 [ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="9_3tgum"]
-[ext_resource type="Texture2D" uid="uid://bjntwngugimu7" path="res://assets/sprites/npc_student/stu_idle_left1.png" id="9_joqo3"]
-[ext_resource type="Texture2D" uid="uid://bbl3sjj05wp0d" path="res://assets/sprites/npc_student/stu_idle_left2.png" id="10_3tgum"]
+[ext_resource type="Texture2D" uid="uid://ccajxusjkeeag" path="res://assets/sprites/npc_teacher/npc_tchr_idle_left1.png" id="10_kb0gv"]
+[ext_resource type="Texture2D" uid="uid://bukpxolnc6h" path="res://assets/sprites/npc_teacher/npc_tchr_idle_left2.png" id="11_mvng4"]
 [ext_resource type="Texture2D" uid="uid://8vagwygqy01c" path="res://assets/sprites/npc_student/stu_idle_right1.png" id="12_ddgja"]
 [ext_resource type="Texture2D" uid="uid://lwqvrr3lw647" path="res://assets/sprites/npc_student/stu_idle_right2.png" id="13_6pu5n"]
 [ext_resource type="Texture2D" uid="uid://dba1j5vlhn5d" path="res://assets/sprites/npc_student/stu_idle_back1.png" id="14_62y1n"]
@@ -86,10 +86,10 @@ size = Vector2(33, 20)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_joqo3")
+"texture": ExtResource("10_kb0gv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_3tgum")
+"texture": ExtResource("11_mvng4")
 }],
 "loop": 1,
 "name": &"default",
