@@ -11,10 +11,7 @@
 [ext_resource type="FontFile" uid="uid://b65vqv72avsml" path="res://assets/fonts/augiepixel.ttf" id="9_3tgum"]
 [ext_resource type="Texture2D" uid="uid://ccajxusjkeeag" path="res://assets/sprites/npc_teacher/npc_tchr_idle_left1.png" id="10_kb0gv"]
 [ext_resource type="Texture2D" uid="uid://bukpxolnc6h" path="res://assets/sprites/npc_teacher/npc_tchr_idle_left2.png" id="11_mvng4"]
-[ext_resource type="Texture2D" uid="uid://8vagwygqy01c" path="res://assets/sprites/npc_student/stu_idle_right1.png" id="12_ddgja"]
-[ext_resource type="Texture2D" uid="uid://lwqvrr3lw647" path="res://assets/sprites/npc_student/stu_idle_right2.png" id="13_6pu5n"]
-[ext_resource type="Texture2D" uid="uid://dba1j5vlhn5d" path="res://assets/sprites/npc_student/stu_idle_back1.png" id="14_62y1n"]
-[ext_resource type="Texture2D" uid="uid://yjaukdu34k5q" path="res://assets/sprites/npc_student/stu_idle_back2.png" id="15_gxvau"]
+[ext_resource type="PackedScene" uid="uid://d2k3mrrokrh54" path="res://Scenes/Entities/Enemy/Enemy.tscn" id="12_xm6xj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53n3g"]
 texture = ExtResource("1_t5dfu")
@@ -99,38 +96,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkr2n"]
 radius = 69.58448
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rkr2n"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_ddgja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_6pu5n")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0ibra"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_62y1n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_gxvau")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ibra"]
-size = Vector2(31, 22)
-
-[node name="ClassRoom" type="Node2D" unique_id=962582155]
+[node name="ClassRoom" type="Node2D" unique_id=962582155 groups=["world_object"]]
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_gwf6f")
@@ -512,47 +478,21 @@ position = Vector2(-105, -133)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teacher/Area2D" unique_id=226488025]
 shape = SubResource("CircleShape2D_rkr2n")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1780639384]
-position = Vector2(32.000015, 454)
-scale = Vector2(2.0875, 2.0875)
-sprite_frames = SubResource("SpriteFrames_rkr2n")
+[node name="Enemy" parent="." unique_id=1575358229 instance=ExtResource("12_xm6xj")]
+position = Vector2(152, 496)
+scale = Vector2(2.165, 2.165)
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=2043553673]
-position = Vector2(1052, 192.00003)
-scale = Vector2(2.0875, 2.0875)
-sprite_frames = SubResource("SpriteFrames_rkr2n")
+[node name="Enemy2" parent="." unique_id=2037716186 instance=ExtResource("12_xm6xj")]
+position = Vector2(1040, 536)
+scale = Vector2(2.165, 2.165)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1639124894]
-position = Vector2(142, 266)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_0ibra")
+[node name="Enemy3" parent="." unique_id=244594124 instance=ExtResource("12_xm6xj")]
+position = Vector2(424, 264)
+scale = Vector2(2.165, 2.165)
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=480628347]
-position = Vector2(456, 210)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_0ibra")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=567060936]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=173537494]
-position = Vector2(32.5, 492)
-shape = SubResource("RectangleShape2D_0ibra")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=597636034]
-position = Vector2(143, 301)
-shape = SubResource("RectangleShape2D_0ibra")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=900504543]
-position = Vector2(455, 242)
-shape = SubResource("RectangleShape2D_0ibra")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=526423057]
-position = Vector2(1051, 227)
-shape = SubResource("RectangleShape2D_0ibra")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1785709012]
-position = Vector2(1104, 604)
-shape = SubResource("RectangleShape2D_0ibra")
+[node name="Enemy4" parent="." unique_id=1735700159 instance=ExtResource("12_xm6xj")]
+position = Vector2(1000, 216)
+scale = Vector2(2.165, 2.165)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="TableChairs2/Area2D" to="." method="_on_chair_body_entered"]

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bm7au8dtde48u" path="res://assets/sprites/temp/34.png" id="3_qa26s"]
 [ext_resource type="Texture2D" uid="uid://wy7hr5yj663e" path="res://assets/sprites/temp/images.png" id="4_1gvl4"]
 [ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/player/Player.tscn" id="5_ocf1e"]
+[ext_resource type="PackedScene" uid="uid://d2k3mrrokrh54" path="res://Scenes/Entities/Enemy/Enemy.tscn" id="7_1gvl4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qa26s"]
 texture = ExtResource("1_3tfxa")
@@ -59,6 +60,7 @@ size = Vector2(169, 31)
 size = Vector2(28, 134.5)
 
 [node name="Hall" type="Node2D" unique_id=1202240005]
+y_sort_enabled = true
 script = ExtResource("1_qa26s")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=640009435]
@@ -71,6 +73,10 @@ texture_filter = 1
 scale = Vector2(6, 6)
 tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAACAAIAAAAAAAEAAAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAAAAAMAAAABAAAAAAAAAAQAAAABAAEAAAALAAIAAAACAAEAAAALAAEAAAACAAAAAAAJAAAAAAABAAIAAAAJAAEAAAABAAMAAAADAAAAAAAAAAIAAAADAAEAAAAAAAMAAAACAAAAAAABAAIAAAAHAAAAAAACAAIAAAAHAAEAAAACAAMAAAAIAAAAAAADAAIAAAAIAAEAAAADAAMAAAAAAAIAAAADAAAAAAALAAYAAAADAAAAAAAAAAYAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_fu5y2")
+
+[node name="Player" parent="." unique_id=669370031 instance=ExtResource("5_ocf1e")]
+position = Vector2(449, 468)
+scale = Vector2(0.5, 0.5)
 
 [node name="Temp" type="Node" parent="." unique_id=429276678]
 
@@ -95,10 +101,6 @@ shape = SubResource("RectangleShape2D_fxs14")
 position = Vector2(1152, 369.75)
 shape = SubResource("RectangleShape2D_rkr2n")
 
-[node name="Player" parent="." unique_id=669370031 instance=ExtResource("5_ocf1e")]
-position = Vector2(449, 468)
-scale = Vector2(0.5, 0.5)
-
 [node name="Markers" type="Node2D" parent="." unique_id=311312205]
 
 [node name="Top" type="Marker2D" parent="Markers" unique_id=858216359]
@@ -106,6 +108,22 @@ position = Vector2(543, 248)
 
 [node name="Right" type="Marker2D" parent="Markers" unique_id=786935391]
 position = Vector2(1048, 376)
+
+[node name="Enemy6" parent="." unique_id=1575358229 instance=ExtResource("7_1gvl4")]
+position = Vector2(888, 382)
+scale = Vector2(2.165, 2.165)
+
+[node name="Enemy7" parent="." unique_id=403976272 instance=ExtResource("7_1gvl4")]
+position = Vector2(203.99994, 413)
+scale = Vector2(2.165, 2.165)
+
+[node name="Enemy8" parent="." unique_id=1315750633 instance=ExtResource("7_1gvl4")]
+position = Vector2(466, 281)
+scale = Vector2(2.165, 2.165)
+
+[node name="Enemy9" parent="." unique_id=1939638033 instance=ExtResource("7_1gvl4")]
+position = Vector2(648, 543)
+scale = Vector2(2.165, 2.165)
 
 [connection signal="body_entered" from="MiniHall" to="." method="_on_mini_hall_body_entered"]
 [connection signal="body_entered" from="OutSideRight" to="." method="_on_out_side_right_body_entered"]

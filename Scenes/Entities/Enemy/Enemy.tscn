@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://707e0wi6sm6h" path="res://Scenes/Entities/Enemy/enemy.gd" id="1_j1w5s"]
 [ext_resource type="Texture2D" uid="uid://dba1j5vlhn5d" path="res://assets/sprites/npc_student/stu_idle_back1.png" id="2_gyerv"]
+[ext_resource type="Shader" uid="uid://dbxqghcf8dsr4" path="res://Scenes/Entities/Enemy/Enemy.gdshader" id="2_pk5un"]
 [ext_resource type="Texture2D" uid="uid://yjaukdu34k5q" path="res://assets/sprites/npc_student/stu_idle_back2.png" id="3_pk5un"]
 [ext_resource type="Texture2D" uid="uid://b68qtv7rq5uhh" path="res://assets/sprites/npc_student/stu_idle_forward1.png" id="4_kypml"]
 [ext_resource type="Texture2D" uid="uid://do0chy8xwgjdy" path="res://assets/sprites/npc_student/stu_idle_forward2.png" id="5_l3nun"]
@@ -27,6 +28,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2acy3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hj3m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5u161"]
+shader = ExtResource("2_pk5un")
+shader_parameter/new_color = Color(0.8690535, 0.45384037, 0.98797303, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2mris"]
 animations = [{
@@ -131,27 +136,11 @@ shape = SubResource("RectangleShape2D_aucjx")
 target_position = Vector2(27, 0)
 collide_with_areas = true
 
-[node name="ColorRect" type="ColorRect" parent="RayCastRight" unique_id=1710456783]
-visible = false
-offset_left = 23.0
-offset_top = -9.0
-offset_right = 39.0
-offset_bottom = 9.0
-color = Color(0.2901961, 1, 1, 1)
-
 [node name="RayCastLeft" type="ShapeCast2D" parent="." unique_id=2063777523]
 scale = Vector2(0.84698516, 1)
 shape = SubResource("RectangleShape2D_vomwa")
 target_position = Vector2(-27, 0)
 collide_with_areas = true
-
-[node name="ColorRect" type="ColorRect" parent="RayCastLeft" unique_id=136891495]
-visible = false
-offset_left = -48.406986
-offset_top = -9.0
-offset_right = -27.29752
-offset_bottom = 9.0
-color = Color(0.24681434, 0.6516743, 0, 1)
 
 [node name="RayCastUp" type="ShapeCast2D" parent="." unique_id=223845956]
 scale = Vector2(1.0580307, 1)
@@ -159,27 +148,11 @@ shape = SubResource("RectangleShape2D_2acy3")
 target_position = Vector2(0, -27)
 collide_with_areas = true
 
-[node name="ColorRect2" type="ColorRect" parent="RayCastUp" unique_id=122479556]
-visible = false
-offset_left = -9.315397
-offset_top = -37.0
-offset_right = 9.451523
-offset_bottom = -17.0
-color = Color(1, 0.32156864, 1, 1)
-
 [node name="RayCastDown" type="ShapeCast2D" parent="." unique_id=1635218099]
 scale = Vector2(1.0059578, 1)
 shape = SubResource("RectangleShape2D_6hj3m")
 target_position = Vector2(0, 27)
 collide_with_areas = true
-
-[node name="ColorRect3" type="ColorRect" parent="RayCastDown" unique_id=1895459383]
-visible = false
-offset_left = -8.946697
-offset_top = 18.0
-offset_right = 9.299826
-offset_bottom = 36.0
-color = Color(0.89773035, 0, 0.18979132, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=99083139]
 wait_time = 6.812
@@ -187,8 +160,9 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=850439929]
 texture_filter = 3
-position = Vector2(0, 8.34465e-07)
-scale = Vector2(0.5, 0.44999993)
+material = SubResource("ShaderMaterial_5u161")
+position = Vector2(0, -22)
+scale = Vector2(1.12, 1.12)
 sprite_frames = SubResource("SpriteFrames_2mris")
 animation = &"idle_fwd"
 metadata/_edit_group_ = true

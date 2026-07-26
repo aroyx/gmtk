@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8kh413krfnij" path="res://assets/sprites/wall_floor/tileset.png" id="1_wioxy"]
 [ext_resource type="Texture2D" uid="uid://cau5jtcw5lfm" path="res://assets/sprites/wall_floor/decor.png" id="2_ij3nr"]
 [ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/player/Player.tscn" id="3_imn5c"]
+[ext_resource type="PackedScene" uid="uid://dj5fsxmxa0p8o" path="res://Scenes/Entities/Teacher/Teacher.tscn" id="5_imn5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5l7c4"]
 texture = ExtResource("1_wioxy")
@@ -54,7 +55,7 @@ sources/0 = SubResource("TileSetAtlasSource_ij3nr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxs14"]
 size = Vector2(139.5, 24)
 
-[node name="Staff_room" type="Node2D" unique_id=751437649]
+[node name="Staff_room" type="Node2D" unique_id=751437649 groups=["world_object"]]
 script = ExtResource("1_ij3nr")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1397926330]
@@ -78,5 +79,17 @@ scale = Vector2(0.5, 0.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1727694828]
 position = Vector2(577.25, 666)
 shape = SubResource("RectangleShape2D_fxs14")
+
+[node name="Teacher" parent="." unique_id=1757985307 instance=ExtResource("5_imn5c")]
+position = Vector2(449, 414)
+scale = Vector2(2.165, 2.165)
+
+[node name="Teacher2" parent="." unique_id=1900495465 instance=ExtResource("5_imn5c")]
+position = Vector2(570, 296)
+scale = Vector2(2.165, 2.165)
+
+[node name="Teacher3" parent="." unique_id=1199751397 instance=ExtResource("5_imn5c")]
+position = Vector2(806, 338)
+scale = Vector2(2.165, 2.165)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

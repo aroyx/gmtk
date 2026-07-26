@@ -31,10 +31,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	$Teacher/AnimatedSprite2D.play()
-	$AnimatedSprite2D.play()
-	$AnimatedSprite2D2.play()
-	$AnimatedSprite2D3.play()
-	$AnimatedSprite2D4.play()
 	$TableChairs2/Label.hide()
 	if gRooms.story_state == gRooms.StoryState.FIND_CLASS:
 		call_deferred("trigger_teacher_findclass_dialogue")
