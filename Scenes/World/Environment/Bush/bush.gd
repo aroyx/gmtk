@@ -3,9 +3,13 @@ extends StaticBody2D
 var hide_ready = false
 var player_hiding
 
+@export var img: CompressedTexture2D = preload("res://assets/sprites/wall+floor_decor/bush.png")
+
 func _ready() -> void:
 	start_hide_timer(randf_range(20, 40))
 	$Label.hide()
+	
+	$Sprite2D.texture = img
 
 func _on_sensor_body_entered(body: Node2D) -> void:
 	$Label.text = "press 'e' to hide"
@@ -19,10 +23,8 @@ func _on_sensor_body_exited(body: Node2D) -> void:
 		if body.nearby_bush == self:
 			body.nearby_bush = null
 
-
 func start_hide_timer(time: float):
 	$Timer.start(time)
-	$TimerCircleSimple.start_countdown(time)
 
 func _on_timer_timeout() -> void:
 	hide_ready = true
@@ -39,4 +41,4 @@ func player_is_hidden():
 	$Label.text = ""
 
 func tried_to_hide_with_failure():
-	$Label.text = "You have to wait for the timer to run out!"
+	$Label.text = "You have to wait for " + str(int($Timer.time_left)) + " sec"

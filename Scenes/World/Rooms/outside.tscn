@@ -4,12 +4,13 @@
 [ext_resource type="Script" uid="uid://cxs4mewl5xhl7" path="res://Scenes/World/Rooms/outside.gd" id="1_tsjyj"]
 [ext_resource type="PackedScene" uid="uid://dwlmgqc3k5h05" path="res://Scenes/Entities/player/Player.tscn" id="2_oxyyf"]
 [ext_resource type="Texture2D" uid="uid://7fgi10ilexma" path="res://assets/sprites/wall+floor_decor/door_right.png" id="4_usuys"]
-[ext_resource type="Texture2D" uid="uid://b2h0717cwy13u" path="res://assets/sprites/temp/123412.jpeg" id="5_ledb3"]
 [ext_resource type="Texture2D" uid="uid://cf27i6evfjosc" path="res://assets/sprites/school_floor_tile/school tile.png" id="5_tsjyj"]
 [ext_resource type="PackedScene" uid="uid://d2k3mrrokrh54" path="res://Scenes/Entities/Enemy/Enemy.tscn" id="6_qib81"]
+[ext_resource type="Texture2D" uid="uid://dtmu2gnpeqva0" path="res://assets/sprites/wall+floor_decor/easter_egg.png" id="6_ugpp1"]
 [ext_resource type="Texture2D" uid="uid://b860j1q6apl8o" path="res://assets/sprites/wall+floor_decor/locker_front.png" id="7_tsjyj"]
 [ext_resource type="Texture2D" uid="uid://ddxadvp2bryi" path="res://assets/sprites/wall+floor_decor/door_front.png" id="8_u7d0t"]
 [ext_resource type="Texture2D" uid="uid://cau5jtcw5lfm" path="res://assets/sprites/wall_floor/decor.png" id="10_hrqh3"]
+[ext_resource type="PackedScene" uid="uid://d28vsnookm3dr" path="res://Scenes/World/Environment/Bush/bush.tscn" id="11_orbh0"]
 [ext_resource type="Texture2D" uid="uid://ck7qn1fcgl1lt" path="res://assets/sprites/canteens/canteen .png" id="11_ugpp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qib81"]
@@ -196,8 +197,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="123412" type="Sprite2D" parent="Node2D" unique_id=769440173]
 position = Vector2(1032, 1320)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_ledb3")
+texture = ExtResource("6_ugpp1")
 
 [node name="Enemy" parent="Node2D" unique_id=1575358229 instance=ExtResource("6_qib81")]
 position = Vector2(-368, 56)
@@ -252,20 +252,98 @@ position = Vector2(-1236, 31)
 scale = Vector2(2.6249998, 2.625)
 texture = ExtResource("11_ugpp1")
 
-[node name="LockerFront2" type="Sprite2D" parent="Node2D" unique_id=1622961352]
-position = Vector2(-915, 77)
-scale = Vector2(2.0000002, 2.0000002)
-texture = ExtResource("7_tsjyj")
+[node name="Bush" parent="Node2D" unique_id=887509664 instance=ExtResource("11_orbh0")]
+position = Vector2(982, 161)
 
-[node name="LockerFront" type="Sprite2D" parent="Node2D" unique_id=1897539444]
-position = Vector2(128, 963.5)
-scale = Vector2(2.0000002, 2.0000002)
-texture = ExtResource("7_tsjyj")
+[node name="Bush2" parent="Node2D" unique_id=1498933949 instance=ExtResource("11_orbh0")]
+position = Vector2(684, 64)
 
-[node name="LockerFront3" type="Sprite2D" parent="Node2D" unique_id=1520120210]
-position = Vector2(-808, 78)
-scale = Vector2(2.0000002, 2.0000002)
-texture = ExtResource("7_tsjyj")
+[node name="Bush3" parent="Node2D" unique_id=2104380469 instance=ExtResource("11_orbh0")]
+position = Vector2(928, 374)
+
+[node name="Bush9" parent="Node2D" unique_id=1722157304 instance=ExtResource("11_orbh0")]
+position = Vector2(469, 1033)
+
+[node name="Bush10" parent="Node2D" unique_id=1877794790 instance=ExtResource("11_orbh0")]
+position = Vector2(224, 377)
+
+[node name="Bush4" parent="Node2D" unique_id=306109824 instance=ExtResource("11_orbh0")]
+position = Vector2(364, 157)
+
+[node name="Bush11" parent="Node2D" unique_id=2033149703 instance=ExtResource("11_orbh0")]
+position = Vector2(126, 159)
+
+[node name="Bush12" parent="Node2D" unique_id=854027645 instance=ExtResource("11_orbh0")]
+position = Vector2(25, 157)
+
+[node name="Bush13" parent="Node2D" unique_id=991130623 instance=ExtResource("11_orbh0")]
+position = Vector2(-187, 70)
+
+[node name="Bush14" parent="Node2D" unique_id=1511282683 instance=ExtResource("11_orbh0")]
+position = Vector2(-588, 157)
+
+[node name="Bush15" parent="Node2D" unique_id=1775512370 instance=ExtResource("11_orbh0")]
+position = Vector2(-600, 367)
+
+[node name="Bush16" parent="Node2D" unique_id=52513759 instance=ExtResource("11_orbh0")]
+position = Vector2(-161, 473)
+
+[node name="Bush17" parent="Node2D" unique_id=909544094 instance=ExtResource("11_orbh0")]
+position = Vector2(-809, 388)
+
+[node name="Bush18" parent="Node2D" unique_id=866644049 instance=ExtResource("11_orbh0")]
+position = Vector2(-1118, 357)
+
+[node name="Bush19" parent="Node2D" unique_id=1918203315 instance=ExtResource("11_orbh0")]
+position = Vector2(-1113, 520)
+
+[node name="Bush20" parent="Node2D" unique_id=698425580 instance=ExtResource("11_orbh0")]
+position = Vector2(-1137, 744)
+
+[node name="Bush21" parent="Node2D" unique_id=1491265461 instance=ExtResource("11_orbh0")]
+position = Vector2(-781, 742)
+
+[node name="Bush22" parent="Node2D" unique_id=265754424 instance=ExtResource("11_orbh0")]
+position = Vector2(469, 1265)
+
+[node name="Bush24" parent="Node2D" unique_id=803607698 instance=ExtResource("11_orbh0")]
+position = Vector2(768, 1642)
+
+[node name="Bush25" parent="Node2D" unique_id=594700315 instance=ExtResource("11_orbh0")]
+position = Vector2(457, 1859)
+
+[node name="Bush26" parent="Node2D" unique_id=400332784 instance=ExtResource("11_orbh0")]
+position = Vector2(1013, 1913)
+
+[node name="Bush27" parent="Node2D" unique_id=1893280529 instance=ExtResource("11_orbh0")]
+position = Vector2(1491, 1621)
+
+[node name="Bush29" parent="Node2D" unique_id=1282542381 instance=ExtResource("11_orbh0")]
+position = Vector2(1859, 1385)
+
+[node name="Bush28" parent="Node2D" unique_id=1808457796 instance=ExtResource("11_orbh0")]
+position = Vector2(1840, 1873)
+
+[node name="Bush23" parent="Node2D" unique_id=1445240212 instance=ExtResource("11_orbh0")]
+position = Vector2(-123, 1268)
+
+[node name="Bush5" parent="Node2D" unique_id=1976183659 instance=ExtResource("11_orbh0")]
+position = Vector2(1235, 163)
+
+[node name="Bush6" parent="Node2D" unique_id=1061976222 instance=ExtResource("11_orbh0")]
+position = Vector2(-772, 86)
+scale = Vector2(2, 2)
+img = ExtResource("7_tsjyj")
+
+[node name="Bush8" parent="Node2D" unique_id=1577556232 instance=ExtResource("11_orbh0")]
+position = Vector2(118, 938)
+scale = Vector2(2, 2)
+img = ExtResource("7_tsjyj")
+
+[node name="Bush7" parent="Node2D" unique_id=1249195246 instance=ExtResource("11_orbh0")]
+position = Vector2(-906, 86)
+scale = Vector2(2, 2)
+img = ExtResource("7_tsjyj")
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=857069287]
 scale = Vector2(3, 3)
