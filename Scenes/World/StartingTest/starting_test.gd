@@ -47,7 +47,7 @@ var questions = [
 			"Isnt that just a kiss?", 
 			"That’s actually what caused the Big Bang.", 
 			"ask buddha",
-			"._."
+			".u."
 		]
 	}, {
 		"question": "Can Jesus microwave a burrito so hot that even he can't eat it?",

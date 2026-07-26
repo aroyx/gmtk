@@ -278,7 +278,7 @@ position = Vector2(140, 153)
 position = Vector2(7, 155)
 
 [node name="Bush13" parent="Node2D" unique_id=991130623 instance=ExtResource("11_orbh0")]
-position = Vector2(-181, 62)
+position = Vector2(-490, -23)
 
 [node name="Bush14" parent="Node2D" unique_id=1511282683 instance=ExtResource("11_orbh0")]
 position = Vector2(-588, 157)

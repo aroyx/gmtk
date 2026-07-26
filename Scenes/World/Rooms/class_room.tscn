@@ -205,7 +205,7 @@ scale = Vector2(3, 2)
 texture = ExtResource("8_joqo3")
 
 [node name="Sprite2D3" type="Sprite2D" parent="TableChairs2" unique_id=725336498]
-modulate = Color(0.8184241, 0.3233805, 0.48730522, 1)
+self_modulate = Color(0.92337316, 0.44909942, 0.4201704, 1)
 position = Vector2(-73, -25)
 scale = Vector2(2, 2)
 texture = ExtResource("7_5hfcr")
