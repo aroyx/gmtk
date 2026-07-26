@@ -44,7 +44,6 @@ func _ready() -> void:
 	elif gRooms.story_state == gRooms.StoryState.NEXT_DAY:
 			call_deferred("do_next_day_stuff")
 
-
 const starting_text :Array[String] = [
 	"I need to go to my class-room, I will be late!\nPress space to continue",
 	"I need to find the class-room fast!",
