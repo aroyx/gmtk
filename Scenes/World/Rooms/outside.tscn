@@ -254,7 +254,7 @@ scale = Vector2(2.6249998, 2.625)
 texture = ExtResource("11_ugpp1")
 
 [node name="Bush" parent="Node2D" unique_id=887509664 instance=ExtResource("11_orbh0")]
-position = Vector2(982, 161)
+position = Vector2(983, 151)
 
 [node name="Bush2" parent="Node2D" unique_id=1498933949 instance=ExtResource("11_orbh0")]
 position = Vector2(684, 64)
@@ -263,7 +263,7 @@ position = Vector2(684, 64)
 position = Vector2(928, 374)
 
 [node name="Bush9" parent="Node2D" unique_id=1722157304 instance=ExtResource("11_orbh0")]
-position = Vector2(469, 1033)
+position = Vector2(463, 1015)
 
 [node name="Bush10" parent="Node2D" unique_id=1877794790 instance=ExtResource("11_orbh0")]
 position = Vector2(224, 377)
@@ -272,13 +272,13 @@ position = Vector2(224, 377)
 position = Vector2(364, 157)
 
 [node name="Bush11" parent="Node2D" unique_id=2033149703 instance=ExtResource("11_orbh0")]
-position = Vector2(126, 159)
+position = Vector2(140, 153)
 
 [node name="Bush12" parent="Node2D" unique_id=854027645 instance=ExtResource("11_orbh0")]
-position = Vector2(25, 157)
+position = Vector2(7, 155)
 
 [node name="Bush13" parent="Node2D" unique_id=991130623 instance=ExtResource("11_orbh0")]
-position = Vector2(-187, 70)
+position = Vector2(-181, 62)
 
 [node name="Bush14" parent="Node2D" unique_id=1511282683 instance=ExtResource("11_orbh0")]
 position = Vector2(-588, 157)
@@ -290,25 +290,25 @@ position = Vector2(-600, 367)
 position = Vector2(-161, 473)
 
 [node name="Bush17" parent="Node2D" unique_id=909544094 instance=ExtResource("11_orbh0")]
-position = Vector2(-809, 388)
+position = Vector2(-797, 403)
 
 [node name="Bush18" parent="Node2D" unique_id=866644049 instance=ExtResource("11_orbh0")]
 position = Vector2(-1118, 357)
 
 [node name="Bush19" parent="Node2D" unique_id=1918203315 instance=ExtResource("11_orbh0")]
-position = Vector2(-1113, 520)
+position = Vector2(-1128, 526)
 
 [node name="Bush20" parent="Node2D" unique_id=698425580 instance=ExtResource("11_orbh0")]
-position = Vector2(-1137, 744)
+position = Vector2(-1147, 722)
 
 [node name="Bush21" parent="Node2D" unique_id=1491265461 instance=ExtResource("11_orbh0")]
-position = Vector2(-781, 742)
+position = Vector2(-771, 731)
 
 [node name="Bush22" parent="Node2D" unique_id=265754424 instance=ExtResource("11_orbh0")]
-position = Vector2(469, 1265)
+position = Vector2(460, 1267)
 
 [node name="Bush24" parent="Node2D" unique_id=803607698 instance=ExtResource("11_orbh0")]
-position = Vector2(768, 1642)
+position = Vector2(788, 1638)
 
 [node name="Bush25" parent="Node2D" unique_id=594700315 instance=ExtResource("11_orbh0")]
 position = Vector2(457, 1859)
