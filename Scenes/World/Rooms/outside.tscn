@@ -101,7 +101,9 @@ sources/0 = SubResource("TileSetAtlasSource_ugpp1")
 
 [node name="Outside" type="Node2D" unique_id=929360150 groups=["world_object"]]
 texture_filter = 1
+position = Vector2(0, 1000)
 script = ExtResource("1_tsjyj")
+metadata/_edit_group_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=170479690]
 texture_filter = 1
@@ -159,19 +161,19 @@ shape = SubResource("RectangleShape2D_usuys")
 [node name="Markers" type="Node2D" parent="." unique_id=1359176849]
 
 [node name="StaffRoom" type="Marker2D" parent="Markers" unique_id=1498244236]
-position = Vector2(-336, -256)
+position = Vector2(-336, 744)
 
 [node name="HallTop" type="Marker2D" parent="Markers" unique_id=26293595]
-position = Vector2(-960, 912)
+position = Vector2(-960, 1912)
 
 [node name="HallRight" type="Marker2D" parent="Markers" unique_id=398618303]
-position = Vector2(-152, 1176)
+position = Vector2(-152, 2176)
 
 [node name="Class" type="Marker2D" parent="Markers" unique_id=1972341976]
-position = Vector2(1680, 1256)
+position = Vector2(1680, 2256)
 
 [node name="Start" type="Marker2D" parent="Markers" unique_id=23363017]
-position = Vector2(1200, -50)
+position = Vector2(1200, 950)
 
 [node name="DoorRight" type="Sprite2D" parent="." unique_id=293031940]
 position = Vector2(-216, 1200)
