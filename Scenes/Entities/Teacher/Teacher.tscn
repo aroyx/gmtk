@@ -166,3 +166,11 @@ scale = Vector2(1.12, 1.12)
 sprite_frames = SubResource("SpriteFrames_mgm8a")
 animation = &"idle_fwd"
 metadata/_edit_group_ = true
+
+[node name="TextTimer" type="Timer" parent="." unique_id=2134183230]
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1574727816]
+position = Vector2(-35, -64)
+
+[connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]

@@ -13,6 +13,19 @@ var can_advance_line = false
 
 var curr_sayer_node
 
+var timer: Timer
+
+func _ready() -> void:
+	timer = Timer.new()
+	timer.one_shot = true
+	timer.wait_time = 2
+	timer.timeout.connect(on_timer_timeout) 
+	add_child(timer)
+
+func on_timer_timeout():
+	if is_dialog_active && can_advance_line:
+		advance_dialog()
+
 func start_dialog(pos: Vector2, lines: Array[String], node):
 	if is_dialog_active:
 		return
@@ -35,6 +48,7 @@ func _show_text_box(node):
 	
 func _on_text_box_finished_displaying():
 	can_advance_line = true
+	timer.start()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if (
@@ -42,11 +56,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_dialog_active && 
 		can_advance_line
 	):
-		text_box.queue_free()
-		curr_line_index += 1
-		if curr_line_index >= dialog_lines.size():
-			is_dialog_active = false
-			curr_line_index = 0
-			return
-		
-		_show_text_box(curr_sayer_node)
+		advance_dialog()
+
+func advance_dialog():
+	timer.stop()
+	text_box.queue_free()
+	curr_line_index += 1
+
+	if curr_line_index >= dialog_lines.size():
+		is_dialog_active = false
+		curr_line_index = 0
+		return
+	
+	_show_text_box(curr_sayer_node)

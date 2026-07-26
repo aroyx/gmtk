@@ -17,9 +17,7 @@ var sayer
 
 signal finished_displaying()
 
-func display_text(text_to_display: String, node) -> void:
-	UiSound.play_sound_click()
-
+func display_text_no_sound(text_to_display: String, node):
 	sayer = node
 	
 	text = text_to_display
@@ -40,6 +38,10 @@ func display_text(text_to_display: String, node) -> void:
 	label.text = ""
 	_position_pointer_sprite() # points to the sayer
 	_display_letter()
+
+func display_text(text_to_display: String, node) -> void:
+	UiSound.play_sound_click()
+	display_text_no_sound(text_to_display, node)
 
 func _display_letter() -> void:
 	label.text += text[letter_index]

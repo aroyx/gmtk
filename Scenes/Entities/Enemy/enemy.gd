@@ -20,6 +20,24 @@ var player_size: Vector2
 #@onready var color_rect_3: ColorRect = $RayCastUp/ColorRect2
 #@onready var color_rect_4: ColorRect = $RayCastDown/ColorRect3
 
+# For dialog
+@onready var text_box_scene = preload("res://Scenes/World/TextBubble/TextBubble.tscn")
+@onready var marker = $Marker2D
+
+var curr_bubble: Node = null
+
+const texts: Array[String] = [
+	"Burp",
+	"Fart",
+	"17 + 13 = 20",
+	"352^3 = 43614208",
+	"this is so lame",
+	"I hope it rains tomorrow",
+	"that's depressing",
+	"ts pmo",
+	"who you tryna rizz gng",
+]
+
 var DIRECTIONS: Dictionary
 var RAYCASTS: Dictionary
 #var COLOR_RECTS: Dictionary
@@ -65,6 +83,16 @@ func _ready() -> void:
 	
 	$AnimatedSprite2D.material = $AnimatedSprite2D.material.duplicate()
 	$AnimatedSprite2D.material.set_shader_parameter("new_color", colors.pick_random())
+	
+	call_deferred("random_text_time")
+
+var first_time = true
+func random_text_time():
+	if first_time:
+		$TextTimer.start(randf_range(2, 20))
+		first_time = false
+	else:
+		$TextTimer.start(randf_range(10, 20))
 
 func _physics_process(_delta: float) -> void:
 	if is_moving:
@@ -147,13 +175,29 @@ func update_animation(dir: Vector2) -> void:
 #
 	#current_shapeCast.visible = true
 
-
 func set_random_timer() -> void:
 	var rand_time = [2, 3, 4].pick_random()
 	timer.wait_time = rand_time
 	timer.start()
 
-
 func _on_timer_timeout() -> void:
 	walk_randomly()
 	set_random_timer()
+
+func say_random_thing():
+	if is_instance_valid(curr_bubble):
+		return
+	
+	curr_bubble = text_box_scene.instantiate()
+	
+	get_tree().root.add_child(curr_bubble)
+	
+	curr_bubble.display_text_no_sound(texts.pick_random(), self)
+	
+	await get_tree().create_timer(3).timeout
+	if is_instance_valid(curr_bubble):
+		curr_bubble.queue_free()
+
+func _on_text_timer_timeout() -> void:
+	say_random_thing()
+	random_text_time()

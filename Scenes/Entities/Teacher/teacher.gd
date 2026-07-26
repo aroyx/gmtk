@@ -20,6 +20,23 @@ var player_size: Vector2
 #@onready var color_rect_3: ColorRect = $RayCastUp/ColorRect2
 #@onready var color_rect_4: ColorRect = $RayCastDown/ColorRect3
 
+@onready var text_box_scene = preload("res://Scenes/World/TextBubble/TextBubble.tscn")
+@onready var marker = $Marker2D
+
+var curr_bubble: Node = null
+
+const texts: Array[String] = [
+	"Knowledge, Strength, Insomnia",
+	"where did it go wrong",
+	"I don't get paid enough for this",
+	"ch-ch clak....\nbang!",
+	"your future is\ndarker than mine",
+	"the sun rises in the east\nthat is sooo directionist",
+	"i woke up at 5 to see this",
+	"i am so hungry\ni could eat a kid",
+	"gandhi was a bad boy",
+]
+
 var DIRECTIONS: Dictionary
 var RAYCASTS: Dictionary
 #var COLOR_RECTS: Dictionary
@@ -65,6 +82,16 @@ func _ready() -> void:
 	
 	$AnimatedSprite2D.material = $AnimatedSprite2D.material.duplicate()
 	$AnimatedSprite2D.material.set_shader_parameter("new_color", colors.pick_random())
+	
+	call_deferred("random_text_time")
+
+var first_time = true
+func random_text_time():
+	if first_time:
+		$TextTimer.start(randf_range(2, 20))
+		first_time = false
+	else:
+		$TextTimer.start(randf_range(10, 20))
 
 func _physics_process(_delta: float) -> void:
 	if is_moving:
@@ -85,7 +112,6 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 
-
 func walk_randomly() -> void:
 	if is_moving:
 		return
@@ -96,7 +122,6 @@ func walk_randomly() -> void:
 	for dir in dirs:
 		if try_direction(dir):
 			return
-
 
 func try_direction(dir: String) -> bool:
 	var ray_cast: ShapeCast2D = RAYCASTS[dir]
@@ -111,7 +136,6 @@ func try_direction(dir: String) -> bool:
 	start_move(dir)
 	return true
 
-
 func start_move(dir: String) -> void:
 	var dir_vector: Vector2 = DIRECTIONS[dir]
 	var step_size_random = randf_range(step_size * 0.5, step_size * 2)
@@ -120,7 +144,6 @@ func start_move(dir: String) -> void:
 
 	update_animation(dir_vector)
 	#make_ShapeCast_visible(COLOR_RECTS[dir])
-
 
 func update_animation(dir: Vector2) -> void:
 	if dir.length() < 0.1:
@@ -138,7 +161,6 @@ func update_animation(dir: Vector2) -> void:
 		else:
 			animated_sprite_2d.play("walk_back")
 
-
 #func make_ShapeCast_visible(current_shapeCast: ColorRect) -> void:
 	#color_rect_1.visible = false
 	#color_rect_2.visible = false
@@ -147,13 +169,29 @@ func update_animation(dir: Vector2) -> void:
 #
 	#current_shapeCast.visible = true
 
-
 func set_random_timer() -> void:
 	var rand_time = [2, 3, 4].pick_random()
 	timer.wait_time = rand_time
 	timer.start()
 
-
 func _on_timer_timeout() -> void:
 	walk_randomly()
 	set_random_timer()
+
+func say_random_thing():
+	if is_instance_valid(curr_bubble):
+		return
+	
+	curr_bubble = text_box_scene.instantiate()
+	
+	get_tree().root.add_child(curr_bubble)
+	
+	curr_bubble.display_text_no_sound(texts.pick_random(), self)
+	
+	await get_tree().create_timer(3).timeout
+	if is_instance_valid(curr_bubble):
+		curr_bubble.queue_free()
+
+func _on_text_timer_timeout() -> void:
+	say_random_thing()
+	random_text_time()

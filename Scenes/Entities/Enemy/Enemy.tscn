@@ -167,4 +167,11 @@ sprite_frames = SubResource("SpriteFrames_2mris")
 animation = &"idle_fwd"
 metadata/_edit_group_ = true
 
+[node name="TextTimer" type="Timer" parent="." unique_id=1820364449]
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=339121968]
+position = Vector2(-29, -60)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
