@@ -25,10 +25,9 @@ const teacher_nextday_dialog: Array[String] = [
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("hide"):
-		if in_chair:
+		if in_chair && gRooms.story_state == gRooms.StoryState.SIT_TEST:
 			DialogueManager.stop_dialog()
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/StartingTest/StartingTest.tscn")
-
 
 func _ready() -> void:
 	$Teacher/AnimatedSprite2D.play()
@@ -60,13 +59,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 var in_chair = false
 
 func _on_chair_body_entered(body: Node2D) -> void:
-	in_chair = true
 	if body is Player && gRooms.story_state == gRooms.StoryState.SIT_TEST:
+		in_chair = true
 		$TableChairs2/Label.show()
 
 func _on_chair_body_exited(body: Node2D) -> void:
-	in_chair = false
 	if body is Player && gRooms.story_state == gRooms.StoryState.SIT_TEST:
+		in_chair = false
 		$TableChairs2/Label.hide()
 
 const player_shocked_dialog : Array[String] = [

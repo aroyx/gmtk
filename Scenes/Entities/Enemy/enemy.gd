@@ -33,7 +33,6 @@ const texts: Array[String] = [
 	"352 power 3 equals 43614208",
 	"this is so lame",
 	"I hope it rains tomorrow",
-	"that's depressing",
 	"ts pmo",
 	"who you tryna rizz gng",
 	"67",
