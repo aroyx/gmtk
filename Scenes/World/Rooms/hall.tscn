@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://l4fs5042qn1r" path="res://assets/sprites/wall+floor_decor/window_seethru.png" id="10_1gvoc"]
 [ext_resource type="Texture2D" uid="uid://bq3le27mnukbd" path="res://assets/sprites/wall+floor_decor/flower_pot.png" id="11_m11dp"]
 [ext_resource type="PackedScene" uid="uid://dj5fsxmxa0p8o" path="res://Scenes/Entities/Teacher/Teacher.tscn" id="12_1gvoc"]
+[ext_resource type="Texture2D" uid="uid://hcadq8rmmjly" path="res://assets/sprites/wall+floor_decor/carpet.png" id="13_m11dp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qa26s"]
 texture = ExtResource("1_3tfxa")
@@ -274,6 +275,54 @@ scale = Vector2(2.165, 2.165)
 [node name="Teacher3" parent="." unique_id=176633693 instance=ExtResource("12_1gvoc")]
 position = Vector2(-111, 562)
 scale = Vector2(2.165, 2.165)
+
+[node name="Carpet" type="Sprite2D" parent="." unique_id=557499157]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(282, 531)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
+
+[node name="Carpet5" type="Sprite2D" parent="." unique_id=1228331287]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(854, 527)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
+
+[node name="Carpet6" type="Sprite2D" parent="." unique_id=25711616]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-288, 540)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
+
+[node name="Carpet2" type="Sprite2D" parent="." unique_id=854096478]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(566, 365)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
+
+[node name="Carpet3" type="Sprite2D" parent="." unique_id=1239937841]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(-29, 706)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
+
+[node name="Carpet7" type="Sprite2D" parent="." unique_id=1530483917]
+position = Vector2(-21, 373)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
+
+[node name="Carpet4" type="Sprite2D" parent="." unique_id=1670111359]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(580, 706)
+scale = Vector2(4.09375, 4.09375)
+texture = ExtResource("13_m11dp")
+offset = Vector2(0, 24.575)
 
 [connection signal="body_entered" from="MiniHall" to="." method="_on_mini_hall_body_entered"]
 [connection signal="body_entered" from="OutSideRight" to="." method="_on_out_side_right_body_entered"]
