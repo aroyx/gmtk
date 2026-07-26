@@ -18,7 +18,7 @@ var timer: Timer
 func _ready() -> void:
 	timer = Timer.new()
 	timer.one_shot = true
-	timer.wait_time = 2
+	timer.wait_time = 4
 	timer.timeout.connect(on_timer_timeout) 
 	add_child(timer)
 
@@ -37,6 +37,18 @@ func start_dialog(pos: Vector2, lines: Array[String], node):
 	_show_text_box(curr_sayer_node)
 	
 	is_dialog_active = true
+
+func stop_dialog() -> void:
+	is_dialog_active = false
+	curr_line_index = 0
+	can_advance_line = false
+	
+	if is_instance_valid(timer):
+		timer.stop()
+	
+	if is_instance_valid(text_box):
+		text_box.queue_free()
+
 
 func _show_text_box(node):
 	text_box = text_box_scene.instantiate()

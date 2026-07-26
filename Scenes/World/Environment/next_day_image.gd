@@ -8,4 +8,5 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	gRooms.out_pos = gRooms.OutPos.CLASS
+	DialogueManager.stop_dialog()
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/outside.tscn")

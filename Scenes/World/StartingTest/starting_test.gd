@@ -82,6 +82,7 @@ var curr_question_index = 0
 
 func load_question():
 	if curr_question_index >= questions.size():
+		DialogueManager.stop_dialog()
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/class_room.tscn")
 		gRooms.story_state = gRooms.StoryState.TEST_END
 		return

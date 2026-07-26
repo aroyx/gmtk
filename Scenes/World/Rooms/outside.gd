@@ -2,25 +2,30 @@ extends Node2D
 
 func _on_staff_room_entry_body_entered(body: Node2D) -> void:
 	if body is Player:
+		DialogueManager.stop_dialog()
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/staff_room.tscn")
 
 func _on_mini_hall_entry_body_entered(body: Node2D) -> void:
 	if body is Player:
 		gRooms.door_dir = gRooms.DoorDir.TOP
+		DialogueManager.stop_dialog()
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/hall.tscn")
 
 func _on_mini_hall_entry_2_body_entered(body: Node2D) -> void:
 	if body is Player:
 		gRooms.door_dir = gRooms.DoorDir.RIGHT
+		DialogueManager.stop_dialog()
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/hall.tscn")
 
 func _on_class_room_entry_body_entered(body: Node2D) -> void:
 	if body is Player:
+		DialogueManager.stop_dialog()
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/class_room.tscn")
 
 func _on_go_home_body_entered(body: Node2D) -> void:
 	if gRooms.story_state == gRooms.StoryState.GO_HOME:
 		if body is Player:
+			DialogueManager.stop_dialog()
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Environment/Next_Day_image.tscn")
 
 func _ready() -> void:

@@ -26,6 +26,7 @@ const teacher_nextday_dialog: Array[String] = [
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("hide"):
 		if in_chair:
+			DialogueManager.stop_dialog()
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/StartingTest/StartingTest.tscn")
 
 
@@ -53,6 +54,7 @@ func trigger_teacher_nextday_dialogue() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		gRooms.out_pos = gRooms.OutPos.CLASS
+		DialogueManager.stop_dialog()
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/World/Rooms/outside.tscn")
 
 var in_chair = false
@@ -74,7 +76,9 @@ const player_shocked_dialog : Array[String] = [
 	"how did I got this less marks!",
 	"0 to be specific",
 	"how did I get so less marks, nooooo!! ;(",
-	"I need to hide my marks from my bullies, I can't let them know about this, otherwise they'll bully me"
+	"I need to hide my marks from my bullies, I can't let them know about this",
+	"they'll bully me",
+	"I should go in the hall to see what ppl are doing there"
 ]
 
 func _on_teacher_body_entered(body: Node2D) -> void:

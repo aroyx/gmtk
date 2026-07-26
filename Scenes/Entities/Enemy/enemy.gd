@@ -29,13 +29,15 @@ var curr_bubble: Node = null
 const texts: Array[String] = [
 	"Burp",
 	"Fart",
-	"17 + 13 = 20",
-	"352^3 = 43614208",
+	"17 + 13 equals 20",
+	"352 power 3 equals 43614208",
 	"this is so lame",
 	"I hope it rains tomorrow",
 	"that's depressing",
 	"ts pmo",
 	"who you tryna rizz gng",
+	"67",
+	"67 my ahh",
 ]
 
 var DIRECTIONS: Dictionary
@@ -194,7 +196,7 @@ func say_random_thing():
 	
 	curr_bubble.display_text_no_sound(texts.pick_random(), self)
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 	if is_instance_valid(curr_bubble):
 		curr_bubble.queue_free()
 

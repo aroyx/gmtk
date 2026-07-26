@@ -34,7 +34,7 @@ const texts: Array[String] = [
 	"the sun rises in the east\nthat is sooo directionist",
 	"i woke up at 5 to see this",
 	"i am so hungry\ni could eat a kid",
-	"gandhi was a bad boy",
+	"gandhi was a bad boi",
 ]
 
 var DIRECTIONS: Dictionary
@@ -188,7 +188,7 @@ func say_random_thing():
 	
 	curr_bubble.display_text_no_sound(texts.pick_random(), self)
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 	if is_instance_valid(curr_bubble):
 		curr_bubble.queue_free()
 

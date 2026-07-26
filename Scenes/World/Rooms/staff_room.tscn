@@ -125,6 +125,22 @@ shape = SubResource("RectangleShape2D_fxs14")
 position = Vector2(449, 414)
 scale = Vector2(2.165, 2.165)
 
+[node name="Teacher7" parent="." unique_id=129926952 instance=ExtResource("5_imn5c")]
+position = Vector2(87, 236.99997)
+scale = Vector2(2.165, 2.165)
+
+[node name="Teacher4" parent="." unique_id=941824653 instance=ExtResource("5_imn5c")]
+position = Vector2(1016, 593)
+scale = Vector2(2.165, 2.165)
+
+[node name="Teacher5" parent="." unique_id=607106817 instance=ExtResource("5_imn5c")]
+position = Vector2(740, 567)
+scale = Vector2(2.165, 2.165)
+
+[node name="Teacher6" parent="." unique_id=551975570 instance=ExtResource("5_imn5c")]
+position = Vector2(175, 619)
+scale = Vector2(2.165, 2.165)
+
 [node name="Teacher2" parent="." unique_id=1900495465 instance=ExtResource("5_imn5c")]
 position = Vector2(570, 296)
 scale = Vector2(2.165, 2.165)
